@@ -1,5 +1,5 @@
 /**
- * MATRIX OPERATING SYSTEM // PORTFOLIO CONTROLLER
+ * MATRIX OPERATING SYSTEM ◈ PORTFOLIO CONTROLLER
  * Candidate: ANAND KUMAR (Senior Frontend Developer & Tech Lead)
  */
 
@@ -53,6 +53,12 @@ class CyberAudio {
     if (!this.enabled || !this.ctx) return;
     this.playBeep(520, 0.08, 'sine', 0.04);
     setTimeout(() => this.playBeep(780, 0.12, 'sine', 0.04), 80);
+  }
+
+  playGlitch() {
+    if (!this.enabled || !this.ctx) return;
+    this.playBeep(240, 0.1, 'sawtooth', 0.05);
+    setTimeout(() => this.playBeep(480, 0.08, 'square', 0.04), 50);
   }
 }
 
@@ -194,12 +200,14 @@ class MatrixPortfolioApp {
   constructor() {
     this.audio = new CyberAudio();
     this.currentView = 'overview';
+    this.currentReality = 'red'; // 'red' (Matrix Cyber) or 'blue' (Executive Minimalist)
     this.terminalOpen = false;
     this.commandHistory = [];
     this.historyIndex = -1;
 
     this.initElements();
     this.bindEvents();
+    this.bindStandoutFeatures();
     this.checkInitialRoute();
   }
 
@@ -213,6 +221,7 @@ class MatrixPortfolioApp {
     this.soundToggleBtn = document.getElementById('sound-toggle-btn');
     this.rainToggleBtn = document.getElementById('rain-toggle-btn');
     this.themePicker = document.getElementById('theme-picker');
+    this.glitchOverlay = document.getElementById('reality-glitch');
   }
 
   bindEvents() {
@@ -361,7 +370,6 @@ class MatrixPortfolioApp {
     document.querySelectorAll('[data-copy-val]').forEach((btn) => {
       btn.addEventListener('click', () => {
         const val = btn.getAttribute('data-copy-val');
-        const label = btn.getAttribute('data-copy-label') || 'ITEM';
         navigator.clipboard.writeText(val).then(() => {
           this.showToast(`COPIED_TO_CLIPBOARD: ${val}`);
           this.audio.playSuccess();
@@ -425,6 +433,125 @@ class MatrixPortfolioApp {
         this.navigateTo(hash, false);
       }
     });
+  }
+
+  // Bind Red Pill / Blue Pill, Architecture Simulator & Component Lab
+  bindStandoutFeatures() {
+    // 1. Red Pill / Blue Pill Reality Switcher
+    document.querySelectorAll('[data-reality-target]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetReality = btn.getAttribute('data-reality-target');
+        this.switchReality(targetReality);
+      });
+    });
+
+    // 2. Pub/Sub Bus Pulse Button
+    const pulseBtn = document.getElementById('pulse-sim-btn');
+    if (pulseBtn) {
+      pulseBtn.addEventListener('click', () => this.pulseBusPacket());
+    }
+
+    // Click on individual architecture nodes to inspect details
+    document.querySelectorAll('.arch-node').forEach((node) => {
+      node.addEventListener('click', () => {
+        document.querySelectorAll('.arch-node').forEach(n => n.classList.remove('active'));
+        node.classList.add('active');
+        const nodeInfo = node.getAttribute('data-node-info') || 'Node Active';
+        const feed = document.getElementById('sim-feed-text');
+        if (feed) {
+          feed.innerHTML = `<strong>NODE INSPECTION:</strong> ${nodeInfo}`;
+        }
+        this.audio.playBeep(720, 0.05);
+      });
+    });
+
+    // 3. Component Lab: Preset Dates
+    document.querySelectorAll('.picker-preset-chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.picker-preset-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const rangeText = chip.getAttribute('data-range');
+        const display = document.getElementById('picker-range-display');
+        if (display && rangeText) {
+          display.innerText = rangeText;
+        }
+        this.audio.playSuccess();
+      });
+    });
+  }
+
+  // Switch Reality (Red Pill = Matrix Cyber, Blue Pill = Minimalist Executive)
+  switchReality(reality) {
+    if (reality === this.currentReality) return;
+    this.currentReality = reality;
+
+    this.audio.playGlitch();
+
+    // Trigger visual glitch flash
+    if (this.glitchOverlay) {
+      this.glitchOverlay.classList.add('flash');
+      setTimeout(() => this.glitchOverlay.classList.remove('flash'), 350);
+    }
+
+    // Toggle body data attribute
+    if (reality === 'blue') {
+      document.documentElement.setAttribute('data-reality', 'blue');
+      this.showToast('REALITY SHIFT ◈ EXECUTIVE SILICON VALLEY MINIMAL');
+    } else {
+      document.documentElement.removeAttribute('data-reality');
+      this.showToast('REALITY SHIFT ◈ AUTHENTIC MATRIX CYBER ENGINE');
+    }
+
+    // Update active state in pill buttons
+    document.querySelectorAll('.pill-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-reality-target') === reality);
+    });
+  }
+
+  // Pulse data packet across Pub/Sub Bus Simulator
+  pulseBusPacket() {
+    const particle = document.getElementById('sim-particle');
+    const feed = document.getElementById('sim-feed-text');
+    const btn = document.getElementById('pulse-sim-btn');
+    if (!particle || !btn) return;
+
+    btn.disabled = true;
+    btn.innerText = '⚡ PULSING PACKET...';
+    this.audio.playBeep(450, 0.08, 'sawtooth');
+
+    // Reset particle position
+    particle.style.left = '4%';
+    particle.classList.add('pulsing');
+
+    // Simulate multi-node journey
+    setTimeout(() => {
+      particle.style.left = '28%';
+      if (feed) feed.innerHTML = `<strong>EVENT DISPATCH:</strong> [AEM_AUTHORING_UPDATE] ➔ Pub/Sub Event Bus (20+ Repos)`;
+      this.audio.playBeep(580, 0.04);
+    }, 400);
+
+    setTimeout(() => {
+      particle.style.left = '52%';
+      if (feed) feed.innerHTML = `<strong>STATE ORCHESTRATION:</strong> Pub/Sub ➔ Cart & Checkout Subsystem [15% Defect Reduction]`;
+      this.audio.playBeep(700, 0.04);
+    }, 900);
+
+    setTimeout(() => {
+      particle.style.left = '76%';
+      if (feed) feed.innerHTML = `<strong>INGESTION &amp; STREAMING:</strong> Event Streaming ➔ Kafka Transformation Hub`;
+      this.audio.playBeep(850, 0.04);
+    }, 1400);
+
+    setTimeout(() => {
+      particle.style.left = '96%';
+      if (feed) feed.innerHTML = `<strong>COMPLETE:</strong> GraphQL Gateway ACK ◈ Latency: 12ms ◈ Status: HEALTHY ✓`;
+      this.audio.playSuccess();
+      setTimeout(() => {
+        particle.classList.remove('pulsing');
+        btn.disabled = false;
+        btn.innerText = '⚡ PULSE DATA PACKET';
+      }, 500);
+    }, 1900);
   }
 
   checkInitialRoute() {
@@ -496,6 +623,7 @@ class MatrixPortfolioApp {
         this.printToTerminal('  projects     - Query operational enterprise projects');
         this.printToTerminal('  skills       - Display technical weapons & frameworks');
         this.printToTerminal('  contact      - Transmit connection handshake info');
+        this.printToTerminal('  reality      - Switch reality: red or blue pill');
         this.printToTerminal('  theme <name> - Switch theme: green, cyan, crimson, amber, mono');
         this.printToTerminal('  sound        - Toggle audio synthesizer');
         this.printToTerminal('  matrix       - Trigger rain ripple disturbance');
@@ -506,24 +634,24 @@ class MatrixPortfolioApp {
       case 'overview':
       case 'bio':
         this.navigateTo('overview');
-        this.printToTerminal('Navigated to: [01 // OVERVIEW]', 'system');
+        this.printToTerminal('Navigated to: [01 ◈ OVERVIEW]', 'system');
         break;
 
       case 'exp':
       case 'experience':
         this.navigateTo('experience');
-        this.printToTerminal('Navigated to: [02 // CAREER TIMELINE]', 'system');
+        this.printToTerminal('Navigated to: [02 ◈ CAREER TIMELINE]', 'system');
         break;
 
       case 'projects':
         this.navigateTo('projects');
-        this.printToTerminal('Navigated to: [03 // OPERATIONAL PROJECTS]', 'system');
+        this.printToTerminal('Navigated to: [03 ◈ OPERATIONAL PROJECTS]', 'system');
         break;
 
       case 'skills':
       case 'arsenal':
         this.navigateTo('arsenal');
-        this.printToTerminal('Navigated to: [04 // TECH ARSENAL]', 'system');
+        this.printToTerminal('Navigated to: [04 ◈ TECH ARSENAL]', 'system');
         break;
 
       case 'contact':
@@ -532,6 +660,17 @@ class MatrixPortfolioApp {
         this.printToTerminal('  Email: anandkumar2991@gmail.com');
         this.printToTerminal('  Phone: +91 9158734603');
         this.printToTerminal('  Location: Bengaluru, India');
+        break;
+
+      case 'reality':
+        if (arg === 'red' || arg === 'blue') {
+          this.switchReality(arg);
+          this.printToTerminal(`Reality shifted to: ${arg.toUpperCase()} PILL`, 'system');
+        } else {
+          const next = this.currentReality === 'red' ? 'blue' : 'red';
+          this.switchReality(next);
+          this.printToTerminal(`Reality shifted to: ${next.toUpperCase()} PILL`, 'system');
+        }
         break;
 
       case 'theme':
@@ -628,7 +767,7 @@ class MatrixPortfolioApp {
 
     this.modalBox.innerHTML = `
       <div style="font-size: 0.72rem; color: var(--matrix-core); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">
-        // PROJECT DEEP DIVE SPECIFICATION
+        ◈ PROJECT DEEP DIVE SPECIFICATION
       </div>
       <h2 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--matrix-bright); margin-bottom: 0.4rem;">
         ${data.title}
@@ -641,7 +780,7 @@ class MatrixPortfolioApp {
 
       <div style="margin-bottom: 1.4rem;">
         <h4 style="font-size: 0.85rem; color: var(--matrix-core); margin-bottom: 0.5rem; text-transform: uppercase;">
-          [01 // System Architecture & Overview]
+          [01 ◈ System Architecture &amp; Overview]
         </h4>
         <p style="font-size: 0.9rem; color: var(--matrix-text); line-height: 1.7; margin-bottom: 0.8rem;">
           ${data.overview}
@@ -653,12 +792,12 @@ class MatrixPortfolioApp {
 
       <div style="margin-bottom: 1.4rem;">
         <h4 style="font-size: 0.85rem; color: var(--matrix-core); margin-bottom: 0.5rem; text-transform: uppercase;">
-          [02 // Key Engineering Impacts]
+          [02 ◈ Key Engineering Impacts]
         </h4>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
           ${data.keyContributions.map(c => `
             <li style="position: relative; padding-left: 1.2rem; font-size: 0.86rem; color: var(--matrix-text); line-height: 1.6;">
-              <span style="position: absolute; left: 0; color: var(--matrix-core); font-weight: 700;">></span>
+              <span style="position: absolute; left: 0; color: var(--matrix-core); font-weight: 700;">▸</span>
               ${c}
             </li>
           `).join('')}
@@ -667,7 +806,7 @@ class MatrixPortfolioApp {
 
       <div style="margin-bottom: 1.4rem;">
         <h4 style="font-size: 0.85rem; color: var(--matrix-core); margin-bottom: 0.5rem; text-transform: uppercase;">
-          [03 // Operational Metrics]
+          [03 ◈ Operational Metrics]
         </h4>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem;">
           ${data.metrics.map(m => `
@@ -680,7 +819,7 @@ class MatrixPortfolioApp {
 
       <div>
         <h4 style="font-size: 0.85rem; color: var(--matrix-core); margin-bottom: 0.6rem; text-transform: uppercase;">
-          [04 // Weaponry / Tech Stack]
+          [04 ◈ Weaponry &amp; Tech Stack]
         </h4>
         <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
           ${data.stack.map(s => `<span class="tech-chip">${s}</span>`).join('')}

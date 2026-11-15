@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ANAND KUMAR // Senior Frontend Developer & Tech Lead [Matrix OS]</title>
+  <title>ANAND KUMAR ◈ Senior Frontend Developer &amp; Tech Lead [Matrix OS]</title>
   <meta name="description" content="Portfolio of Anand Kumar, Senior Frontend Developer and Technical Lead with 7+ years of experience in React, TypeScript, Alpine.js, Pub/Sub architectures, and AEM.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300ff66'>⚡</text></svg>">
   <link rel="stylesheet" href="css/portfolio.css">
 </head>
 <body>
+  <!-- Reality Glitch Flash Overlay -->
+  <div class="reality-glitch-overlay" id="reality-glitch"></div>
+
   <!-- Ambient High-Performance Matrix Digital Rain -->
   <canvas id="ambient-matrix-canvas"></canvas>
 
@@ -21,7 +24,7 @@
     <div class="topbar-left">
       <a href="#overview" class="brand-node" data-view-target="overview">
         <span class="node-pulse"></span>
-        <span>ANAND_KUMAR://SYS</span>
+        <span>ANAND_KUMAR<span class="cyber-sep">::</span>SYS</span>
       </a>
       <div class="telemetry-tag">
         <span>LOC:</span>
@@ -29,11 +32,21 @@
       </div>
       <div class="telemetry-tag">
         <span>STATUS:</span>
-        <span style="color: var(--matrix-core);">ACTIVE_NODE // 7+ YRS EXP</span>
+        <span style="color: var(--matrix-core);">ACTIVE_NODE <span class="badge-dot">•</span> 7+ YRS EXP</span>
       </div>
     </div>
 
     <div class="topbar-right">
+      <!-- Feature A: Red Pill / Blue Pill Reality Switcher -->
+      <div class="pill-mode-group" title="Toggle Reality Engine">
+        <button class="pill-btn red-pill active" data-reality-target="red" title="Deep Matrix Cyber Experience">
+          <span>💊</span> RED PILL
+        </button>
+        <button class="pill-btn blue-pill" data-reality-target="blue" title="Executive Minimalist Silicon Valley Mode">
+          <span>💊</span> BLUE PILL
+        </button>
+      </div>
+
       <!-- Theme Switcher -->
       <select class="theme-picker-select" id="theme-picker" title="Switch Theme Subroutine">
         <option value="classic" selected>🟩 MATRIX EMERALD</option>
@@ -71,7 +84,7 @@
     <aside class="matrix-dock">
       <div>
         <div class="dock-header">
-          <div class="dock-id">// OPERATOR PROFILE</div>
+          <div class="dock-id"><span class="cyber-glyph">◈</span>OPERATOR PROFILE</div>
           <div class="dock-title scramble-hover" data-scramble="ANAND KUMAR">ANAND KUMAR</div>
           <div class="dock-subtitle">SR. FRONTEND DEV &amp; TECH LEAD</div>
         </div>
@@ -125,7 +138,7 @@
       <div class="dock-footer">
         <div class="dock-meta-item">
           <span>AVAILABILITY:</span>
-          <span class="dock-meta-val">IMMEDIATE / SENIOR</span>
+          <span class="dock-meta-val">IMMEDIATE <span class="pill-dot">•</span> SENIOR</span>
         </div>
         <div class="dock-meta-item">
           <span>SECURITY:</span>
@@ -136,7 +149,7 @@
           <span class="dock-meta-val">PRESS 'T'</span>
         </div>
         <div style="margin-top: 0.8rem; font-size: 0.68rem; opacity: 0.6;">
-          MATRIX OPERATING SYSTEM v3.4
+          MATRIX OPERATING SYSTEM v3.5
         </div>
       </div>
     </aside>
@@ -150,10 +163,10 @@
       <section class="page-view active" id="view-overview">
         <div class="view-header">
           <div class="view-breadcrumbs">
-            <span>TERMINAL</span> / <span>ROOT</span> / <span class="curr">01_OVERVIEW.SYS</span>
+            <span>TERMINAL</span> › <span>ROOT</span> › <span class="curr">01_OVERVIEW.SYS</span>
           </div>
-          <h1 class="view-title scramble-hover" data-scramble="SYSTEM DOSSIER // IDENTITY">
-            SYSTEM DOSSIER // IDENTITY
+          <h1 class="view-title scramble-hover" data-scramble="SYSTEM DOSSIER ◈ IDENTITY">
+            SYSTEM DOSSIER <span class="cyber-sep">◈</span> IDENTITY
           </h1>
           <p class="view-desc">
             Senior Frontend Engineer &amp; Technical Lead with proven expertise in building high-concurrency Pub/Sub architectures, resilient enterprise CMS solutions, and automated CI/CD pipelines.
@@ -168,9 +181,9 @@
               NODE ACTIVE
             </span>
             <span>BENGALURU, INDIA</span>
-            <span>•</span>
+            <span class="badge-dot">•</span>
             <span>+91 9158734603</span>
-            <span>•</span>
+            <span class="badge-dot">•</span>
             <span>anandkumar2991@gmail.com</span>
           </div>
 
@@ -203,8 +216,61 @@
           </div>
         </div>
 
+        <!-- Standout Feature B: Interactive Pub/Sub Architecture & Data Flow Simulator -->
+        <div class="arch-sim-box">
+          <div class="arch-sim-header">
+            <div>
+              <div class="arch-sim-title">
+                <span class="cyber-glyph">◈</span> LIVE PUB/SUB ARCHITECTURE BUS
+              </div>
+              <div style="font-size: 0.76rem; color: var(--matrix-text-muted); margin-top: 0.2rem;">
+                Interactive visualization of Anand's 20+ micro-repo decoupled architecture at T-Mobile &amp; OpenText Kafka streaming.
+              </div>
+            </div>
+            <button class="cyber-btn primary" id="pulse-sim-btn">
+              <span>⚡</span> PULSE DATA PACKET
+            </button>
+          </div>
+
+          <div class="arch-bus-diagram">
+            <div class="sim-particle" id="sim-particle"></div>
+
+            <div class="arch-node active" data-node-info="AEM CMS Content Authoring Node: Dynamic component config &amp; asset updates via custom Alpine.js directives.">
+              <div class="arch-node-name">AEM CMS</div>
+              <div class="arch-node-sub">Authoring Node</div>
+            </div>
+
+            <div class="arch-node" data-node-info="Pub/Sub Core Event Bus: High-throughput event bus coordinating 20+ decoupled repositories with zero regression.">
+              <div class="arch-node-name">Pub/Sub Bus</div>
+              <div class="arch-node-sub">20+ Repositories</div>
+            </div>
+
+            <div class="arch-node" data-node-info="Commerce Engine: Real-time Cart, Checkout, and Promo Banner calculation with custom date picker.">
+              <div class="arch-node-name">Cart &amp; Checkout</div>
+              <div class="arch-node-sub">T-Mobile Digital</div>
+            </div>
+
+            <div class="arch-node" data-node-info="Kafka Event Hub: High-volume streaming &amp; Transformation Hub for enterprise log and event ingestion.">
+              <div class="arch-node-name">Kafka Hub</div>
+              <div class="arch-node-sub">Transformation Hub</div>
+            </div>
+
+            <div class="arch-node" data-node-info="GraphQL &amp; HAPI Gateway: Schema aggregation endpoint communicating with client micro-frontends.">
+              <div class="arch-node-name">GraphQL Gateway</div>
+              <div class="arch-node-sub">Node.js / HAPI</div>
+            </div>
+          </div>
+
+          <div class="sim-telemetry-feed">
+            <span id="sim-feed-text">
+              <strong>BUS STATUS:</strong> [IDLE ◈ AWAITING PACKET INJECTION] Click 'PULSE DATA PACKET' or click any node above to inspect.
+            </span>
+            <span style="color: var(--matrix-core);">PUB/SUB PROTOCOL: READY</span>
+          </div>
+        </div>
+
         <!-- Operational Metrics Grid -->
-        <h3 class="section-headline">// OPERATIONAL IMPACT METRICS</h3>
+        <h3 class="section-headline"><span class="cyber-glyph">◈</span> OPERATIONAL IMPACT METRICS</h3>
         <div class="metrics-grid">
           <div class="metric-card">
             <div class="metric-val">07+</div>
@@ -244,12 +310,12 @@
         </div>
 
         <!-- Strategic Highlights Grid -->
-        <h3 class="section-headline" style="margin-top: 2rem;">// CORE SPECIALIZATIONS</h3>
+        <h3 class="section-headline" style="margin-top: 2rem;"><span class="cyber-glyph">◈</span> CORE SPECIALIZATIONS</h3>
         <div class="projects-grid">
           <div class="project-card">
             <div>
               <div class="project-badge-bar">
-                <span class="project-badge">ARCHITECTURE</span>
+                <span class="project-badge">ARCHITECTURE <span class="pill-dot">•</span> PUB/SUB</span>
                 <span class="project-metric-pill">HIGH CONCURRENCY</span>
               </div>
               <h4 class="project-title">Pub/Sub &amp; Event-Driven Systems</h4>
@@ -267,7 +333,7 @@
           <div class="project-card">
             <div>
               <div class="project-badge-bar">
-                <span class="project-badge">CMS &amp; SPEED</span>
+                <span class="project-badge">CMS &amp; SPEED <span class="pill-dot">•</span> AEM</span>
                 <span class="project-metric-pill">+25% SPEED</span>
               </div>
               <h4 class="project-title">Adobe Experience Manager (AEM)</h4>
@@ -285,7 +351,7 @@
           <div class="project-card">
             <div>
               <div class="project-badge-bar">
-                <span class="project-badge">SECURITY &amp; DEVOPS</span>
+                <span class="project-badge">SECURITY &amp; DEVOPS <span class="pill-dot">•</span> CI/CD</span>
                 <span class="project-metric-pill">CVE REMEDIATION</span>
               </div>
               <h4 class="project-title">Zero-Tolerance CI/CD Security</h4>
@@ -308,10 +374,10 @@
       <section class="page-view" id="view-experience">
         <div class="view-header">
           <div class="view-breadcrumbs">
-            <span>TERMINAL</span> / <span>ROOT</span> / <span class="curr">02_CAREER_ARCHIVE.SYS</span>
+            <span>TERMINAL</span> › <span>ROOT</span> › <span class="curr">02_CAREER_ARCHIVE.SYS</span>
           </div>
-          <h1 class="view-title scramble-hover" data-scramble="CHRONOLOGICAL DATA BUS // 7+ YEARS">
-            CHRONOLOGICAL DATA BUS // 7+ YEARS
+          <h1 class="view-title scramble-hover" data-scramble="CAREER TIMELINE ◈ 7+ YEARS">
+            CAREER TIMELINE <span class="cyber-sep">◈</span> 7+ YEARS
           </h1>
           <p class="view-desc">
             A battle-tested track record spanning leading tech enterprises (OpenText, HCLTech for T-Mobile, Kaleyra, Software AG, and Tech Mahindra).
@@ -468,7 +534,7 @@
       <section class="page-view" id="view-projects">
         <div class="view-header">
           <div class="view-breadcrumbs">
-            <span>TERMINAL</span> / <span>ROOT</span> / <span class="curr">03_PROJECT_MATRIX.SYS</span>
+            <span>TERMINAL</span> › <span>ROOT</span> › <span class="curr">03_PROJECT_MATRIX.SYS</span>
           </div>
           <h1 class="view-title scramble-hover" data-scramble="OPERATIONAL ENTERPRISE PROJECTS">
             OPERATIONAL ENTERPRISE PROJECTS
@@ -492,7 +558,7 @@
           <div class="project-card" data-category="frontend pubsub cms">
             <div>
               <div class="project-badge-bar">
-                <span class="project-badge">T-MOBILE // HIGH TRAFFIC</span>
+                <span class="project-badge">T-MOBILE <span class="pill-dot">•</span> COMMERCE</span>
                 <span class="project-metric-pill">20+ REPOSITORIES</span>
               </div>
               <h3 class="project-title scramble-hover" data-scramble="T-Mobile Digital Commerce Platform">
@@ -525,7 +591,7 @@
           <div class="project-card" data-category="frontend security">
             <div>
               <div class="project-badge-bar">
-                <span class="project-badge">OPENTEXT // DEFENSE</span>
+                <span class="project-badge">OPENTEXT <span class="pill-dot">•</span> DEFENSE</span>
                 <span class="project-metric-pill">CVE REMEDIATION</span>
               </div>
               <h3 class="project-title scramble-hover" data-scramble="OpenText ArcSight &amp; TDR Runtime">
@@ -558,7 +624,7 @@
           <div class="project-card" data-category="frontend cms">
             <div>
               <div class="project-badge-bar">
-                <span class="project-badge">AMAZON // ENTERPRISE</span>
+                <span class="project-badge">AMAZON <span class="pill-dot">•</span> ENTERPRISE</span>
                 <span class="project-metric-pill">20K+ EMPLOYEES</span>
               </div>
               <h3 class="project-title scramble-hover" data-scramble="Amazon Employee Resource Hub">
@@ -590,7 +656,7 @@
           <div class="project-card" data-category="frontend">
             <div>
               <div class="project-badge-bar">
-                <span class="project-badge">FLEX // LOGISTICS</span>
+                <span class="project-badge">FLEX <span class="pill-dot">•</span> LOGISTICS</span>
                 <span class="project-metric-pill">LONDON HUB</span>
               </div>
               <h3 class="project-title scramble-hover" data-scramble="Flex Global Warehouse Management">
@@ -622,7 +688,7 @@
           <div class="project-card" data-category="frontend pubsub">
             <div>
               <div class="project-badge-bar">
-                <span class="project-badge">SOFTWARE AG // INTEGRATION</span>
+                <span class="project-badge">SOFTWARE AG <span class="pill-dot">•</span> INTEGRATION</span>
                 <span class="project-metric-pill">GQL &amp; ANALYTICS</span>
               </div>
               <h3 class="project-title scramble-hover" data-scramble="Webmethods.io Integration Platform">
@@ -650,6 +716,90 @@
             </div>
           </div>
         </div>
+
+        <!-- Standout Feature C: Component Lab (Vanilla JS Date Range Picker Demo) -->
+        <div class="component-lab-box">
+          <div class="category-title" style="margin-bottom: 0.4rem;">
+            <span><span class="cyber-glyph">◈</span> COMPONENT LAB: REUSABLE VANILLA JS + JSX DATE RANGE PICKER</span>
+            <span class="cat-badge">+15% UX EFFICIENCY</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--matrix-text-muted); margin-bottom: 1.2rem;">
+            Live demonstration of the custom date range picker engineered for T-Mobile's multi-repository cart checkout. Designed in pure Vanilla JS + JSX to eliminate massive library bundle footprints.
+          </p>
+
+          <div class="component-lab-grid">
+            <!-- Left: Interactive Date Picker Widget -->
+            <div class="lab-demo-card">
+              <div style="font-size: 0.72rem; color: var(--matrix-text-muted); margin-bottom: 0.4rem; text-transform: uppercase;">
+                Active Date Range Selection:
+              </div>
+              <div class="picker-input-field">
+                <span id="picker-range-display">Nov 01, 2026 ➔ Nov 15, 2026</span>
+                <span style="color: var(--matrix-core);">📅</span>
+              </div>
+
+              <div class="picker-presets-row">
+                <button class="picker-preset-chip active" data-range="Nov 01, 2026 ➔ Nov 15, 2026">Last 14 Days</button>
+                <button class="picker-preset-chip" data-range="Nov 09, 2026 ➔ Nov 15, 2026">Current Sprint</button>
+                <button class="picker-preset-chip" data-range="Oct 01, 2026 ➔ Dec 31, 2026">Q4 Release</button>
+                <button class="picker-preset-chip" data-range="Jan 01, 2026 ➔ Nov 15, 2026">Year to Date</button>
+              </div>
+
+              <div class="mini-calendar-strip">
+                <div class="cal-day-header">Su</div>
+                <div class="cal-day-header">Mo</div>
+                <div class="cal-day-header">Tu</div>
+                <div class="cal-day-header">We</div>
+                <div class="cal-day-header">Th</div>
+                <div class="cal-day-header">Fr</div>
+                <div class="cal-day-header">Sa</div>
+
+                <div class="cal-day in-range">1</div>
+                <div class="cal-day in-range">2</div>
+                <div class="cal-day in-range">3</div>
+                <div class="cal-day in-range">4</div>
+                <div class="cal-day in-range">5</div>
+                <div class="cal-day in-range">6</div>
+                <div class="cal-day in-range">7</div>
+                <div class="cal-day in-range">8</div>
+                <div class="cal-day in-range">9</div>
+                <div class="cal-day in-range">10</div>
+                <div class="cal-day in-range">11</div>
+                <div class="cal-day in-range">12</div>
+                <div class="cal-day in-range">13</div>
+                <div class="cal-day in-range">14</div>
+                <div class="cal-day range-end">15</div>
+                <div class="cal-day">16</div>
+                <div class="cal-day">17</div>
+                <div class="cal-day">18</div>
+                <div class="cal-day">19</div>
+                <div class="cal-day">20</div>
+                <div class="cal-day">21</div>
+              </div>
+            </div>
+
+            <!-- Right: Architectural Rationale -->
+            <div class="lab-demo-card">
+              <h4 style="font-size: 0.88rem; color: var(--matrix-bright); margin-bottom: 0.6rem;">
+                Why Vanilla JS + JSX?
+              </h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.8rem; color: var(--matrix-text-muted);">
+                <li style="position: relative; padding-left: 1.1rem;">
+                  <span style="position: absolute; left: 0; color: var(--matrix-core);">▸</span>
+                  <strong>Zero External Dependencies:</strong> Prevented 200KB+ bundle weight from Moment/Date-Fns across 20+ interconnected T-Mobile repos.
+                </li>
+                <li style="position: relative; padding-left: 1.1rem;">
+                  <span style="position: absolute; left: 0; color: var(--matrix-core);">▸</span>
+                  <strong>AEM Compatible:</strong> Embeds seamlessly inside Adobe Experience Manager authoring dialogue nodes without hydration mismatches.
+                </li>
+                <li style="position: relative; padding-left: 1.1rem;">
+                  <span style="position: absolute; left: 0; color: var(--matrix-core);">▸</span>
+                  <strong>+15% Checkout Velocity:</strong> Intuitive presets and rapid keyboard navigation streamlined user transaction flows.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- ==========================================
@@ -658,10 +808,10 @@
       <section class="page-view" id="view-arsenal">
         <div class="view-header">
           <div class="view-breadcrumbs">
-            <span>TERMINAL</span> / <span>ROOT</span> / <span class="curr">04_TECH_ARSENAL.SYS</span>
+            <span>TERMINAL</span> › <span>ROOT</span> › <span class="curr">04_TECH_ARSENAL.SYS</span>
           </div>
-          <h1 class="view-title scramble-hover" data-scramble="TACTICAL WEAPONRY // TECH STACK">
-            TACTICAL WEAPONRY // TECH STACK
+          <h1 class="view-title scramble-hover" data-scramble="TACTICAL WEAPONRY ◈ TECH STACK">
+            TACTICAL WEAPONRY <span class="cyber-sep">◈</span> TECH STACK
           </h1>
           <p class="view-desc">
             A comprehensive inventory of languages, frameworks, architectural patterns, and cloud/security tooling mastered across 7+ years of engineering.
@@ -679,7 +829,7 @@
               <div class="skill-row">
                 <div class="skill-info">
                   <span class="skill-name">React.js &amp; Redux</span>
-                  <span class="skill-level-text">EXPERT // 7+ YRS</span>
+                  <span class="skill-level-text">EXPERT <span class="pill-dot">•</span> 7+ YRS</span>
                 </div>
                 <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 95%;"></div></div>
               </div>
@@ -687,7 +837,7 @@
               <div class="skill-row">
                 <div class="skill-info">
                   <span class="skill-name">JavaScript (ES6+) &amp; TypeScript</span>
-                  <span class="skill-level-text">EXPERT // 7+ YRS</span>
+                  <span class="skill-level-text">EXPERT <span class="pill-dot">•</span> 7+ YRS</span>
                 </div>
                 <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 94%;"></div></div>
               </div>
@@ -695,7 +845,7 @@
               <div class="skill-row">
                 <div class="skill-info">
                   <span class="skill-name">Alpine.js</span>
-                  <span class="skill-level-text">ADVANCED // CUSTOM DIRECTIVES</span>
+                  <span class="skill-level-text">ADVANCED <span class="pill-dot">•</span> CUSTOM DIRECTIVES</span>
                 </div>
                 <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%;"></div></div>
               </div>
@@ -703,7 +853,7 @@
               <div class="skill-row">
                 <div class="skill-info">
                   <span class="skill-name">HTML5, CSS3, SCSS</span>
-                  <span class="skill-level-text">EXPERT // RESPONSIVE DESIGN</span>
+                  <span class="skill-level-text">EXPERT <span class="pill-dot">•</span> RESPONSIVE DESIGN</span>
                 </div>
                 <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 96%;"></div></div>
               </div>
@@ -728,7 +878,7 @@
               <div class="skill-row">
                 <div class="skill-info">
                   <span class="skill-name">Pub/Sub Architectures</span>
-                  <span class="skill-level-text">20+ REPOS // T-MOBILE</span>
+                  <span class="skill-level-text">20+ REPOS <span class="pill-dot">•</span> T-MOBILE</span>
                 </div>
                 <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 92%;"></div></div>
               </div>
@@ -736,7 +886,7 @@
               <div class="skill-row">
                 <div class="skill-info">
                   <span class="skill-name">Kafka &amp; Transformation Hub</span>
-                  <span class="skill-level-text">EVENT STREAMING // OPENTEXT</span>
+                  <span class="skill-level-text">EVENT STREAMING <span class="pill-dot">•</span> OPENTEXT</span>
                 </div>
                 <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 85%;"></div></div>
               </div>
@@ -859,7 +1009,7 @@
         </div>
 
         <!-- Soft Skills & Leadership Matrix -->
-        <h3 class="section-headline" style="margin-top: 2.5rem;">// LEADERSHIP &amp; ENGINEERING CULTURE</h3>
+        <h3 class="section-headline" style="margin-top: 2.5rem;"><span class="cyber-glyph">◈</span> LEADERSHIP &amp; ENGINEERING CULTURE</h3>
         <div class="metrics-grid">
           <div class="metric-card">
             <div class="metric-label" style="color: var(--matrix-core); font-size: 1.1rem; margin-bottom: 0.4rem;">
@@ -896,7 +1046,7 @@
       <section class="page-view" id="view-dossier">
         <div class="view-header">
           <div class="view-breadcrumbs">
-            <span>TERMINAL</span> / <span>ROOT</span> / <span class="curr">05_OPERATOR_DOSSIER.SYS</span>
+            <span>TERMINAL</span> › <span>ROOT</span> › <span class="curr">05_OPERATOR_DOSSIER.SYS</span>
           </div>
           <h1 class="view-title scramble-hover" data-scramble="BACKGROUND, PHILOSOPHY &amp; EDUCATION">
             BACKGROUND, PHILOSOPHY &amp; EDUCATION
@@ -909,7 +1059,7 @@
         <div class="dossier-grid">
           <!-- Left: Engineering Philosophy & Objective -->
           <div class="dossier-card">
-            <h3 class="section-headline">// PROFESSIONAL OBJECTIVE</h3>
+            <h3 class="section-headline"><span class="cyber-glyph">◈</span> PROFESSIONAL OBJECTIVE</h3>
             <div class="dossier-prose">
               <p>
                 Innovative Frontend Developer with <strong>7+ years of experience</strong> in designing, developing, and optimizing user-centric applications. Proven expertise in handling high-complexity projects, including large-scale Pub/Sub architectures and content management systems. Adept at using modern frontend technologies like <strong>TypeScript</strong>, <strong>Alpine.js</strong>, and <strong>React.js</strong> to deliver scalable and maintainable solutions. Seeking to leverage my technical acumen and leadership skills to contribute to a cutting-edge technology team.
@@ -920,7 +1070,7 @@
               </div>
 
               <h4 style="color: var(--matrix-bright); font-size: 1rem; margin-top: 0.8rem;">
-                // THREE CORE ENGINEERING PILLARS:
+                <span class="cyber-glyph">◈</span> THREE ARCHITECTURAL PILLARS:
               </h4>
 
               <p>
@@ -940,7 +1090,7 @@
           <!-- Right: Education & Certifications -->
           <div>
             <div class="dossier-card" style="margin-bottom: 1.6rem;">
-              <h3 class="section-headline">// ACADEMIC DEGREE</h3>
+              <h3 class="section-headline"><span class="cyber-glyph">◈</span> ACADEMIC DEGREE</h3>
               <div style="font-size: 1.15rem; font-weight: 700; color: var(--matrix-bright); margin-bottom: 0.3rem;">
                 Bachelor of Engineering (B.E.)
               </div>
@@ -962,7 +1112,7 @@
             </div>
 
             <div class="dossier-card">
-              <h3 class="section-headline">// QUICK FACTS</h3>
+              <h3 class="section-headline"><span class="cyber-glyph">◈</span> DOSSIER METADATA</h3>
               <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.82rem;">
                 <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--matrix-border); padding-bottom: 0.4rem;">
                   <span style="color: var(--matrix-text-muted);">Current Base:</span>
@@ -978,11 +1128,11 @@
                 </li>
                 <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--matrix-border); padding-bottom: 0.4rem;">
                   <span style="color: var(--matrix-text-muted);">Preferred Roles:</span>
-                  <span style="color: var(--matrix-core);">Sr. Frontend Dev / Tech Lead</span>
+                  <span style="color: var(--matrix-core);">Sr. Frontend Dev <span class="pill-dot">•</span> Tech Lead</span>
                 </li>
                 <li style="display: flex; justify-content: space-between; padding-top: 0.2rem;">
                   <span style="color: var(--matrix-text-muted);">Work Modes:</span>
-                  <span style="color: var(--matrix-bright);">Hybrid / Remote / On-Site</span>
+                  <span style="color: var(--matrix-bright);">Hybrid <span class="pill-dot">•</span> Remote <span class="pill-dot">•</span> On-Site</span>
                 </li>
               </ul>
             </div>
@@ -996,10 +1146,10 @@
       <section class="page-view" id="view-contact">
         <div class="view-header">
           <div class="view-breadcrumbs">
-            <span>TERMINAL</span> / <span>ROOT</span> / <span class="curr">06_TRANSMIT_HANDSHAKE.SYS</span>
+            <span>TERMINAL</span> › <span>ROOT</span> › <span class="curr">06_TRANSMIT_HANDSHAKE.SYS</span>
           </div>
-          <h1 class="view-title scramble-hover" data-scramble="TRANSMIT PACKET // CONNECT">
-            TRANSMIT PACKET // CONNECT
+          <h1 class="view-title scramble-hover" data-scramble="TRANSMIT PACKET ◈ CONNECT">
+            TRANSMIT PACKET <span class="cyber-sep">◈</span> CONNECT
           </h1>
           <p class="view-desc">
             Initiate communication with Anand Kumar. Copy coordinates with one click or dispatch a secure encrypted message.
@@ -1009,7 +1159,7 @@
         <div class="transmit-wrapper">
           <!-- Left: Direct Channels & Instant Actions -->
           <div class="transmit-box">
-            <h3 class="section-headline">// DIRECT OPERATOR CHANNELS</h3>
+            <h3 class="section-headline"><span class="cyber-glyph">◈</span> DIRECT OPERATOR CHANNELS</h3>
             <p style="font-size: 0.85rem; color: var(--matrix-text-muted); margin-bottom: 1.2rem;">
               Click any channel below to copy the packet directly to your clipboard or launch your email client.
             </p>
@@ -1073,7 +1223,7 @@
 
           <!-- Right: Encrypted Transmit Form -->
           <div class="transmit-box">
-            <h3 class="section-headline">// ENCRYPTED TRANSMIT DISPATCH</h3>
+            <h3 class="section-headline"><span class="cyber-glyph">◈</span> ENCRYPTED TRANSMIT DISPATCH</h3>
             <form class="cyber-form" id="transmit-form">
               <div class="form-group">
                 <label class="form-label" for="sender-name">Operator / Sender Name</label>
@@ -1155,6 +1305,7 @@
       <button class="term-chip" data-cmd="projects">projects</button>
       <button class="term-chip" data-cmd="skills">skills</button>
       <button class="term-chip" data-cmd="contact">contact</button>
+      <button class="term-chip" data-cmd="reality">reality shift</button>
       <button class="term-chip" data-cmd="matrix">matrix ripple</button>
       <button class="term-chip" data-cmd="theme cyan">theme cyan</button>
       <button class="term-chip" data-cmd="sudo hire">sudo hire</button>
@@ -1162,14 +1313,14 @@
     </div>
 
     <div class="terminal-body" id="terminal-output">
-      <div class="terminal-output-line system">// INITIALIZING MATRIX CLI SHELL v3.4</div>
-      <div class="terminal-output-line system">// OPERATOR: ANAND KUMAR [SR. FRONTEND DEV &amp; TECH LEAD]</div>
-      <div class="terminal-output-line system">// Type 'help' or click any chips above to execute subroutines.</div>
+      <div class="terminal-output-line system">[SYS:INIT] MATRIX CLI SHELL v3.5</div>
+      <div class="terminal-output-line system">[OPERATOR] ANAND KUMAR [SR. FRONTEND DEV &amp; TECH LEAD]</div>
+      <div class="terminal-output-line system">[HELP] Type 'help' or click any chips above to execute subroutines.</div>
     </div>
 
     <div class="terminal-input-row">
       <span class="terminal-prompt">anand@matrix:~$</span>
-      <input type="text" class="terminal-input" id="terminal-input" placeholder="Type command... (e.g. help, projects, skills, contact)" autocomplete="off" spellcheck="false">
+      <input type="text" class="terminal-input" id="terminal-input" placeholder="Type command... (e.g. help, projects, skills, reality, contact)" autocomplete="off" spellcheck="false">
     </div>
   </div>
 
