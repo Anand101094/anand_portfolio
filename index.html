@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANAND KUMAR // Senior Frontend Developer & Tech Lead [Matrix OS]</title>
+  <meta name="description" content="Portfolio of Anand Kumar, Senior Frontend Developer and Technical Lead with 7+ years of experience in React, TypeScript, Alpine.js, Pub/Sub architectures, and AEM.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300ff66'>⚡</text></svg>">
+  <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+  <!-- Ambient High-Performance Matrix Digital Rain -->
+  <canvas id="ambient-matrix-canvas"></canvas>
+
+  <!-- CRT Optics & Vignette Overlays -->
+  <div class="crt-overlay"></div>
+  <div class="vignette-overlay"></div>
+
+  <!-- Top Realtime Telemetry Bar -->
+  <header class="matrix-topbar">
+    <div class="topbar-left">
+      <a href="#overview" class="brand-node" data-view-target="overview">
+        <span class="node-pulse"></span>
+        <span>ANAND_KUMAR://SYS</span>
+      </a>
+      <div class="telemetry-tag">
+        <span>LOC:</span>
+        <span style="color: var(--matrix-bright);">BLR, INDIA</span>
+      </div>
+      <div class="telemetry-tag">
+        <span>STATUS:</span>
+        <span style="color: var(--matrix-core);">ACTIVE_NODE // 7+ YRS EXP</span>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <!-- Theme Switcher -->
+      <select class="theme-picker-select" id="theme-picker" title="Switch Theme Subroutine">
+        <option value="classic" selected>🟩 MATRIX EMERALD</option>
+        <option value="cyan">🟦 NEON CYAN</option>
+        <option value="crimson">🟥 SITH CRIMSON</option>
+        <option value="amber">🟨 ZION AMBER</option>
+        <option value="mono">⬜ MONO TERMINAL</option>
+      </select>
+
+      <!-- Matrix Rain Mode -->
+      <button class="cyber-btn" id="rain-toggle-btn" title="Cycle Matrix Rain Intensity">
+        <span>⚡</span> RAIN: DENSE
+      </button>
+
+      <!-- Audio Synthesizer Toggle -->
+      <button class="cyber-btn" id="sound-toggle-btn" title="Toggle Synthesizer Sound Effects">
+        <span>🔇</span> SOUND: OFF
+      </button>
+
+      <!-- Terminal Launcher -->
+      <button class="cyber-btn" id="terminal-toggle-btn" title="Toggle Interactive Terminal (Hotkey: T or ~)">
+        <span>&gt;_</span> CLI
+      </button>
+
+      <!-- Print / Export CV -->
+      <button class="cyber-btn primary" onclick="window.print()" title="Print or Save Executive Resume PDF">
+        <span>📄</span> EXPORT RESUME
+      </button>
+    </div>
+  </header>
+
+  <!-- Application Shell -->
+  <div class="matrix-layout">
+    <!-- Left Cyber Navigation Dock -->
+    <aside class="matrix-dock">
+      <div>
+        <div class="dock-header">
+          <div class="dock-id">// OPERATOR PROFILE</div>
+          <div class="dock-title scramble-hover" data-scramble="ANAND KUMAR">ANAND KUMAR</div>
+          <div class="dock-subtitle">SR. FRONTEND DEV &amp; TECH LEAD</div>
+        </div>
+
+        <nav class="dock-nav">
+          <a class="dock-link active" data-view-target="overview">
+            <span class="link-label">
+              <span class="link-index">[01]</span>
+              <span>OVERVIEW</span>
+            </span>
+            <span class="dock-badge">SYS</span>
+          </a>
+          <a class="dock-link" data-view-target="experience">
+            <span class="link-label">
+              <span class="link-index">[02]</span>
+              <span>EXPERIENCE</span>
+            </span>
+            <span class="dock-badge">7+ YRS</span>
+          </a>
+          <a class="dock-link" data-view-target="projects">
+            <span class="link-label">
+              <span class="link-index">[03]</span>
+              <span>PROJECTS</span>
+            </span>
+            <span class="dock-badge">5 CORE</span>
+          </a>
+          <a class="dock-link" data-view-target="arsenal">
+            <span class="link-label">
+              <span class="link-index">[04]</span>
+              <span>TECH ARSENAL</span>
+            </span>
+            <span class="dock-badge">STACK</span>
+          </a>
+          <a class="dock-link" data-view-target="dossier">
+            <span class="link-label">
+              <span class="link-index">[05]</span>
+              <span>DOSSIER</span>
+            </span>
+            <span class="dock-badge">EDU</span>
+          </a>
+          <a class="dock-link" data-view-target="contact">
+            <span class="link-label">
+              <span class="link-index">[06]</span>
+              <span>TRANSMIT</span>
+            </span>
+            <span class="dock-badge">CONNECT</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="dock-footer">
+        <div class="dock-meta-item">
+          <span>AVAILABILITY:</span>
+          <span class="dock-meta-val">IMMEDIATE / SENIOR</span>
+        </div>
+        <div class="dock-meta-item">
+          <span>SECURITY:</span>
+          <span class="dock-meta-val">CVE HARDENED</span>
+        </div>
+        <div class="dock-meta-item">
+          <span>CLI HOTKEY:</span>
+          <span class="dock-meta-val">PRESS 'T'</span>
+        </div>
+        <div style="margin-top: 0.8rem; font-size: 0.68rem; opacity: 0.6;">
+          MATRIX OPERATING SYSTEM v3.4
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Stage -->
+    <main class="matrix-stage">
+
+      <!-- ==========================================
+           PAGE 01: OVERVIEW / IDENTITY DOSSIER
+           ========================================== -->
+      <section class="page-view active" id="view-overview">
+        <div class="view-header">
+          <div class="view-breadcrumbs">
+            <span>TERMINAL</span> / <span>ROOT</span> / <span class="curr">01_OVERVIEW.SYS</span>
+          </div>
+          <h1 class="view-title scramble-hover" data-scramble="SYSTEM DOSSIER // IDENTITY">
+            SYSTEM DOSSIER // IDENTITY
+          </h1>
+          <p class="view-desc">
+            Senior Frontend Engineer &amp; Technical Lead with proven expertise in building high-concurrency Pub/Sub architectures, resilient enterprise CMS solutions, and automated CI/CD pipelines.
+          </p>
+        </div>
+
+        <!-- Hero Dossier Card -->
+        <div class="hero-dossier">
+          <div class="hero-meta-strip">
+            <span class="status-badge">
+              <span class="node-pulse"></span>
+              NODE ACTIVE
+            </span>
+            <span>BENGALURU, INDIA</span>
+            <span>•</span>
+            <span>+91 9158734603</span>
+            <span>•</span>
+            <span>anandkumar2991@gmail.com</span>
+          </div>
+
+          <h2 class="hero-name scramble-hover" data-scramble="ANAND KUMAR">
+            ANAND KUMAR
+          </h2>
+
+          <div class="hero-role">
+            <span>&gt; SENIOR FRONTEND DEVELOPER &amp; TECHNICAL LEAD</span>
+            <span class="cursor-blink"></span>
+          </div>
+
+          <p class="hero-bio">
+            Innovative Frontend Developer with <strong>7+ years of experience</strong> in designing, developing, and optimizing user-centric applications. Proven expertise in handling high-complexity projects, including large-scale Pub/Sub architectures and content management systems. Adept at leveraging modern frontend technologies like <strong>TypeScript</strong>, <strong>Alpine.js</strong>, and <strong>React.js</strong> to deliver scalable, secure, and maintainable enterprise solutions.
+          </p>
+
+          <div class="hero-actions">
+            <button class="cyber-btn primary" data-view-target="projects">
+              <span>⚡</span> INSPECT PROJECTS (5)
+            </button>
+            <button class="cyber-btn" data-view-target="experience">
+              <span>⏱</span> CAREER TIMELINE
+            </button>
+            <button class="cyber-btn" data-copy-val="anandkumar2991@gmail.com" data-copy-label="EMAIL">
+              <span>📋</span> COPY EMAIL
+            </button>
+            <button class="cyber-btn" data-view-target="contact">
+              <span>📡</span> TRANSMIT HANDSHAKE
+            </button>
+          </div>
+        </div>
+
+        <!-- Operational Metrics Grid -->
+        <h3 class="section-headline">// OPERATIONAL IMPACT METRICS</h3>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-val">07+</div>
+            <div class="metric-label">YEARS EXPERIENCE</div>
+            <div class="metric-sub">Enterprise Frontend &amp; Tech Leadership</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-val">20+</div>
+            <div class="metric-label">MICRO-REPOS</div>
+            <div class="metric-sub">Architected under Pub/Sub for T-Mobile</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-val">25%</div>
+            <div class="metric-label">PERFORMANCE GAIN</div>
+            <div class="metric-sub">Site acceleration via AEM orchestration</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-val">15%</div>
+            <div class="metric-label">DEFECT REDUCTION</div>
+            <div class="metric-sub">Through compliance &amp; QA specifications</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-val">20K+</div>
+            <div class="metric-label">CONCURRENT USERS</div>
+            <div class="metric-sub">Load tested for Amazon employee portal</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-val">40%</div>
+            <div class="metric-label">TASK VELOCITY GAIN</div>
+            <div class="metric-sub">Achieved via engineering mentorship</div>
+          </div>
+        </div>
+
+        <!-- Strategic Highlights Grid -->
+        <h3 class="section-headline" style="margin-top: 2rem;">// CORE SPECIALIZATIONS</h3>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div>
+              <div class="project-badge-bar">
+                <span class="project-badge">ARCHITECTURE</span>
+                <span class="project-metric-pill">HIGH CONCURRENCY</span>
+              </div>
+              <h4 class="project-title">Pub/Sub &amp; Event-Driven Systems</h4>
+              <p class="project-desc">
+                Architecting modular frontend ecosystems managing 20+ interconnected repositories with asynchronous state orchestration, decoupling dependencies and mitigating regression risks.
+              </p>
+            </div>
+            <div class="project-footer">
+              <span class="tech-chip">Pub/Sub</span>
+              <span class="tech-chip">Kafka</span>
+              <span class="tech-chip">Micro-Frontends</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <div class="project-badge-bar">
+                <span class="project-badge">CMS &amp; SPEED</span>
+                <span class="project-metric-pill">+25% SPEED</span>
+              </div>
+              <h4 class="project-title">Adobe Experience Manager (AEM)</h4>
+              <p class="project-desc">
+                Seamless dynamic and static content orchestration using custom Alpine.js directives and React widgets. Reduced render bottlenecks and enabled frictionless authoring.
+              </p>
+            </div>
+            <div class="project-footer">
+              <span class="tech-chip">AEM</span>
+              <span class="tech-chip">Alpine.js</span>
+              <span class="tech-chip">React.js</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <div class="project-badge-bar">
+                <span class="project-badge">SECURITY &amp; DEVOPS</span>
+                <span class="project-metric-pill">CVE REMEDIATION</span>
+              </div>
+              <h4 class="project-title">Zero-Tolerance CI/CD Security</h4>
+              <p class="project-desc">
+                Hardened enterprise software against critical Black Duck CVE vulnerabilities and embedded Fortify on Demand (FoD) automated scanning into GitLab CI/CD pipelines.
+              </p>
+            </div>
+            <div class="project-footer">
+              <span class="tech-chip">GitLab CI/CD</span>
+              <span class="tech-chip">Fortify FoD</span>
+              <span class="tech-chip">Black Duck</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           PAGE 02: CAREER TIMELINE
+           ========================================== -->
+      <section class="page-view" id="view-experience">
+        <div class="view-header">
+          <div class="view-breadcrumbs">
+            <span>TERMINAL</span> / <span>ROOT</span> / <span class="curr">02_CAREER_ARCHIVE.SYS</span>
+          </div>
+          <h1 class="view-title scramble-hover" data-scramble="CHRONOLOGICAL DATA BUS // 7+ YEARS">
+            CHRONOLOGICAL DATA BUS // 7+ YEARS
+          </h1>
+          <p class="view-desc">
+            A battle-tested track record spanning leading tech enterprises (OpenText, HCLTech for T-Mobile, Kaleyra, Software AG, and Tech Mahindra).
+          </p>
+        </div>
+
+        <div class="timeline-stream">
+          <!-- Node 1: OpenText -->
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-company">
+                  <span>OpenText</span>
+                  <span style="font-size: 0.75rem; color: var(--matrix-core);">[CURRENT ROLE]</span>
+                </div>
+                <div class="timeline-period">10/2025 – PRESENT</div>
+              </div>
+              <div class="timeline-role">Senior Software Engineer (Frontend)</div>
+              <ul class="timeline-points">
+                <li>Strengthened application security by resolving critical vulnerabilities identified via <strong>Black Duck CVE scans</strong> and integrated <strong>Fortify on Demand (FoD)</strong> into CI/CD pipelines, elevating overall code compliance.</li>
+                <li>Designed and implemented resilient <strong>GitLab CI/CD pipelines</strong> (including <code>gitlab-ci.yaml</code>) for ACMS, automating and streamlining build, vulnerability scan, and deployment workflows.</li>
+                <li>Engineered <strong>Kafka-based event streaming</strong> and Transformation Hub integrations, enabling scalable real-time data processing and seamless microservices coordination.</li>
+                <li>Developed and enhanced AI-driven skills and platform capabilities within an existing AI platform, augmenting automated workflows and intelligent triage.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tech-chip">React.js</span>
+                <span class="tech-chip">GitLab CI/CD</span>
+                <span class="tech-chip">Kafka</span>
+                <span class="tech-chip">Transformation Hub</span>
+                <span class="tech-chip">Fortify on Demand</span>
+                <span class="tech-chip">Black Duck CVE</span>
+                <span class="tech-chip">AI Platforms</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 2: HCLTech -->
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-company">
+                  <span>HCLTech</span>
+                  <span style="font-size: 0.75rem; color: var(--matrix-text-muted);">[CLIENT: T-MOBILE]</span>
+                </div>
+                <div class="timeline-period">05/2021 – 09/2025</div>
+              </div>
+              <div class="timeline-role">Senior Technical Lead</div>
+              <ul class="timeline-points">
+                <li>Spearheaded the development of a robust frontend ecosystem for a high-traffic project at <strong>T-Mobile</strong>, based on a <strong>Pub/Sub architecture managing 20+ interconnected repositories</strong>.</li>
+                <li>Ensured strict adherence to industry best practices, architectural specifications, and rigorous quality standards, leading to a <strong>15% reduction in code defects</strong>.</li>
+                <li>Directed cross-functional collaboration with engineering squads to resolve critical security vulnerabilities, achieving a <strong>20% improvement in application compliance</strong>.</li>
+                <li>Designed and implemented a reusable custom date range picker in pure <strong>Vanilla JS together with custom JSX</strong>, boosting checkout user interaction efficiency by 15%.</li>
+                <li>Streamlined team workflows and mentored engineers, driving a <strong>40% increase in overall task efficiency</strong>.</li>
+                <li>Leveraged <strong>Adobe Experience Manager (AEM)</strong> for effective content management, improving site performance by <strong>25%</strong>.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tech-chip">React.js</span>
+                <span class="tech-chip">TypeScript</span>
+                <span class="tech-chip">Alpine.js</span>
+                <span class="tech-chip">AEM</span>
+                <span class="tech-chip">Pub/Sub Architecture</span>
+                <span class="tech-chip">Node.js</span>
+                <span class="tech-chip">HAPI</span>
+                <span class="tech-chip">GraphQL</span>
+                <span class="tech-chip">Docker</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 3: Kaleyra -->
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-company">Kaleyra</div>
+                <div class="timeline-period">09/2020 – 04/2021</div>
+              </div>
+              <div class="timeline-role">Software Engineer</div>
+              <ul class="timeline-points">
+                <li>Integrated Kaleyra’s communication APIs (SMS and voice) into web frontend applications, enabling real-time communications and improving service delivery for enterprise clients.</li>
+                <li>Implemented industry best practices for frontend performance optimization, ensuring fast load times and silky-smooth user interactions by reducing app latency and optimizing assets.</li>
+                <li>Contributed to frontend infrastructure scalability by designing modular components that smoothly accommodated surging user traffic and future feature expansions.</li>
+                <li>Led rigorous code reviews, authored unit tests, and enforced code quality standards to ensure long-term architectural maintainability.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tech-chip">React.js</span>
+                <span class="tech-chip">JavaScript (ES6+)</span>
+                <span class="tech-chip">REST APIs</span>
+                <span class="tech-chip">SMS &amp; Voice APIs</span>
+                <span class="tech-chip">Unit Testing</span>
+                <span class="tech-chip">Performance Optimization</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 4: Software AG -->
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-company">Software AG</div>
+                <div class="timeline-period">08/2019 – 09/2020</div>
+              </div>
+              <div class="timeline-role">Software Engineer Trainee</div>
+              <ul class="timeline-points">
+                <li>Developed an intuitive drag-and-drop feature, enhancing user experience and workflow usability by 20%.</li>
+                <li>Played a pivotal role in transitioning legacy frontend code from Angular to <strong>React.js</strong>, leading to a <strong>30% improvement in maintainability</strong>.</li>
+                <li>Collaborated with global stakeholders to design frontend solutions that improved perceived application speed by 10%.</li>
+                <li>Formulated comprehensive test strategies, boosting reliability and reducing release regressions.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tech-chip">React.js</span>
+                <span class="tech-chip">Angular Migration</span>
+                <span class="tech-chip">Drag &amp; Drop UI</span>
+                <span class="tech-chip">Redux</span>
+                <span class="tech-chip">Testing Strategy</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 5: Tech Mahindra -->
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-company">Tech Mahindra</div>
+                <div class="timeline-period">08/2016 – 09/2019</div>
+              </div>
+              <div class="timeline-role">Associate Software Engineer</div>
+              <ul class="timeline-points">
+                <li>Led the creation of a secure intranet platform, enabling streamlined internal communications across business units.</li>
+                <li>Designed and developed an AI-driven chatbot for internal enterprise use, reducing support query handling time by <strong>30%</strong>.</li>
+                <li>Actively participated in onshore client sessions, providing timely solutions and earning multiple accolades for delivery excellence.</li>
+                <li>Authored and maintained technical troubleshooting documentation, cutting issue resolution time by 15%.</li>
+                <li>Engineered custom Kanban boards, project management dashboards, and movie reservation systems.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tech-chip">JavaScript</span>
+                <span class="tech-chip">HTML5 / SCSS</span>
+                <span class="tech-chip">AI Chatbot</span>
+                <span class="tech-chip">Kanban Engine</span>
+                <span class="tech-chip">Intranet Systems</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           PAGE 03: OPERATIONAL PROJECTS
+           ========================================== -->
+      <section class="page-view" id="view-projects">
+        <div class="view-header">
+          <div class="view-breadcrumbs">
+            <span>TERMINAL</span> / <span>ROOT</span> / <span class="curr">03_PROJECT_MATRIX.SYS</span>
+          </div>
+          <h1 class="view-title scramble-hover" data-scramble="OPERATIONAL ENTERPRISE PROJECTS">
+            OPERATIONAL ENTERPRISE PROJECTS
+          </h1>
+          <p class="view-desc">
+            Production systems built for global enterprises (T-Mobile, OpenText, Amazon ER, Flex Logistics, Webmethods.io). Click any protocol to inspect full architecture specs.
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">ALL PROTOCOLS (5)</button>
+          <button class="filter-btn" data-filter="frontend">REACT &amp; FRONTEND</button>
+          <button class="filter-btn" data-filter="pubsub">PUB/SUB &amp; ARCHITECTURE</button>
+          <button class="filter-btn" data-filter="security">SECURITY &amp; CI/CD</button>
+          <button class="filter-btn" data-filter="cms">AEM &amp; CMS</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: T-Mobile -->
+          <div class="project-card" data-category="frontend pubsub cms">
+            <div>
+              <div class="project-badge-bar">
+                <span class="project-badge">T-MOBILE // HIGH TRAFFIC</span>
+                <span class="project-metric-pill">20+ REPOSITORIES</span>
+              </div>
+              <h3 class="project-title scramble-hover" data-scramble="T-Mobile Digital Commerce Platform">
+                T-Mobile Digital Commerce Platform
+              </h3>
+              <p class="project-desc">
+                High-scale frontend ecosystem orchestrating cart, checkout, promo-banners, and dynamic user tiers across 20+ interconnected repositories with zero regression.
+              </p>
+              <ul class="project-highlights">
+                <li>Created custom Alpine.js directives to dynamically load authoring variables and sync with DOM.</li>
+                <li>Engineered custom date range picker in pure Vanilla JS + custom JSX (+15% checkout conversion).</li>
+                <li>Leveraged AEM configuration nodes to route multi-tier user journeys dynamically.</li>
+                <li>Integrated HAPI API endpoints with GraphQL schema query aggregation.</li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+                <span class="tech-chip">TypeScript</span>
+                <span class="tech-chip">Alpine</span>
+                <span class="tech-chip">AEM</span>
+                <span class="tech-chip">Pub/Sub</span>
+              </div>
+              <button class="cyber-btn primary" data-inspect-project="t-mobile">
+                INSPECT
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 2: OpenText ArcSight -->
+          <div class="project-card" data-category="frontend security">
+            <div>
+              <div class="project-badge-bar">
+                <span class="project-badge">OPENTEXT // DEFENSE</span>
+                <span class="project-metric-pill">CVE REMEDIATION</span>
+              </div>
+              <h3 class="project-title scramble-hover" data-scramble="OpenText ArcSight &amp; TDR Runtime">
+                OpenText ArcSight &amp; TDR Runtime
+              </h3>
+              <p class="project-desc">
+                Enterprise threat detection runtime fortified against critical vulnerabilities, combined with automated GitLab CI/CD pipelines and Kafka event streaming.
+              </p>
+              <ul class="project-highlights">
+                <li>Automated Black Duck CVE vulnerability scans &amp; Fortify on Demand (FoD) into CI/CD.</li>
+                <li>Built GitLab CI pipelines (gitlab-ci.yaml) automating build, scan, and deploy cycles.</li>
+                <li>Integrated Kafka event streaming with Transformation Hub for real-time log analytics.</li>
+                <li>Embedded AI platform capabilities for intelligent triage and autonomous remediation.</li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+                <span class="tech-chip">React</span>
+                <span class="tech-chip">GitLab CI</span>
+                <span class="tech-chip">Kafka</span>
+                <span class="tech-chip">AI Platform</span>
+              </div>
+              <button class="cyber-btn primary" data-inspect-project="opentext">
+                INSPECT
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 3: Amazon ER -->
+          <div class="project-card" data-category="frontend cms">
+            <div>
+              <div class="project-badge-bar">
+                <span class="project-badge">AMAZON // ENTERPRISE</span>
+                <span class="project-metric-pill">20K+ EMPLOYEES</span>
+              </div>
+              <h3 class="project-title scramble-hover" data-scramble="Amazon Employee Resource Hub">
+                Amazon Employee Resource Hub
+              </h3>
+              <p class="project-desc">
+                Internal enterprise communication and benefits portal for corporate Amazon employees globally, delivering static and dynamic content seamlessly.
+              </p>
+              <ul class="project-highlights">
+                <li>Engineered 35+ resilient, highly reusable UI components in under 6 months.</li>
+                <li>Stress-tested and smoothly handled 20,000+ concurrent enterprise employees during launch.</li>
+                <li>Integrated Adobe Experience Manager (AEM) data pipelines for dynamic multi-region updates.</li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+                <span class="tech-chip">React</span>
+                <span class="tech-chip">AEM</span>
+                <span class="tech-chip">SCSS</span>
+                <span class="tech-chip">Stress Testing</span>
+              </div>
+              <button class="cyber-btn primary" data-inspect-project="amazon">
+                INSPECT
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 4: Flex Logistics -->
+          <div class="project-card" data-category="frontend">
+            <div>
+              <div class="project-badge-bar">
+                <span class="project-badge">FLEX // LOGISTICS</span>
+                <span class="project-metric-pill">LONDON HUB</span>
+              </div>
+              <h3 class="project-title scramble-hover" data-scramble="Flex Global Warehouse Management">
+                Flex Global Warehouse Management
+              </h3>
+              <p class="project-desc">
+                Logistics portal and mobile-responsive application for London warehouse staff, managing live shift allocations, rosters, and role governance.
+              </p>
+              <ul class="project-highlights">
+                <li>Built real-time shift management and operational roster scheduling interfaces.</li>
+                <li>Integrated Redis distributed caching to slash API query response times by 45%.</li>
+                <li>Refactored gateway APIs to implement strict role-based access control (RBAC) via Azure.</li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+                <span class="tech-chip">React</span>
+                <span class="tech-chip">TypeScript</span>
+                <span class="tech-chip">Redis</span>
+                <span class="tech-chip">Azure RBAC</span>
+              </div>
+              <button class="cyber-btn primary" data-inspect-project="flex">
+                INSPECT
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 5: Webmethods.io -->
+          <div class="project-card" data-category="frontend pubsub">
+            <div>
+              <div class="project-badge-bar">
+                <span class="project-badge">SOFTWARE AG // INTEGRATION</span>
+                <span class="project-metric-pill">GQL &amp; ANALYTICS</span>
+              </div>
+              <h3 class="project-title scramble-hover" data-scramble="Webmethods.io Integration Platform">
+                Webmethods.io Integration Platform
+              </h3>
+              <p class="project-desc">
+                Cloud integration suite powering SaaS connector ecosystems, webhook telemetry capture, and real-time session utilization dashboards.
+              </p>
+              <ul class="project-highlights">
+                <li>Engineered complex connector modules integrated seamlessly with GraphQL APIs.</li>
+                <li>Implemented webhook telemetry system to stream logs and metric traces to diagnostic sinks.</li>
+                <li>Visualized live traffic spikes and API session consumption with interactive Chart.js widgets.</li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+                <span class="tech-chip">React</span>
+                <span class="tech-chip">Flux / Redux</span>
+                <span class="tech-chip">GraphQL</span>
+                <span class="tech-chip">Chart.js</span>
+              </div>
+              <button class="cyber-btn primary" data-inspect-project="webmethods">
+                INSPECT
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           PAGE 04: TECH ARSENAL / SKILLS MATRIX
+           ========================================== -->
+      <section class="page-view" id="view-arsenal">
+        <div class="view-header">
+          <div class="view-breadcrumbs">
+            <span>TERMINAL</span> / <span>ROOT</span> / <span class="curr">04_TECH_ARSENAL.SYS</span>
+          </div>
+          <h1 class="view-title scramble-hover" data-scramble="TACTICAL WEAPONRY // TECH STACK">
+            TACTICAL WEAPONRY // TECH STACK
+          </h1>
+          <p class="view-desc">
+            A comprehensive inventory of languages, frameworks, architectural patterns, and cloud/security tooling mastered across 7+ years of engineering.
+          </p>
+        </div>
+
+        <div class="arsenal-grid">
+          <!-- Category 1: Frontend & Languages -->
+          <div class="arsenal-category">
+            <div class="category-title">
+              <span>LANGUAGES &amp; UI CORE</span>
+              <span class="cat-badge">TIER 1</span>
+            </div>
+            <div class="skill-list">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">React.js &amp; Redux</span>
+                  <span class="skill-level-text">EXPERT // 7+ YRS</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript (ES6+) &amp; TypeScript</span>
+                  <span class="skill-level-text">EXPERT // 7+ YRS</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 94%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Alpine.js</span>
+                  <span class="skill-level-text">ADVANCED // CUSTOM DIRECTIVES</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">HTML5, CSS3, SCSS</span>
+                  <span class="skill-level-text">EXPERT // RESPONSIVE DESIGN</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 96%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Vue.js, Ant Design &amp; Material UI</span>
+                  <span class="skill-level-text">PROFICIENT</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 82%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Architecture & Streaming -->
+          <div class="arsenal-category">
+            <div class="category-title">
+              <span>ARCHITECTURE &amp; STREAMS</span>
+              <span class="cat-badge">SCALE</span>
+            </div>
+            <div class="skill-list">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Pub/Sub Architectures</span>
+                  <span class="skill-level-text">20+ REPOS // T-MOBILE</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Kafka &amp; Transformation Hub</span>
+                  <span class="skill-level-text">EVENT STREAMING // OPENTEXT</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Microservices &amp; Micro-Frontends</span>
+                  <span class="skill-level-text">DECOUPLED SYSTEMS</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">GraphQL &amp; REST APIs</span>
+                  <span class="skill-level-text">AGGREGATION &amp; SCHEMA</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Node.js, Express &amp; HAPI</span>
+                  <span class="skill-level-text">BACKEND RUNTIMES</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 84%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: CMS & Enterprise Platform -->
+          <div class="arsenal-category">
+            <div class="category-title">
+              <span>CMS &amp; ENTERPRISE PLATFORMS</span>
+              <span class="cat-badge">ENTERPRISE</span>
+            </div>
+            <div class="skill-list">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Adobe Experience Manager (AEM)</span>
+                  <span class="skill-level-text">+25% SPEED OPTIMIZATION</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">AI Platforms &amp; Intelligent Workflows</span>
+                  <span class="skill-level-text">AUTOMATION SKILLS</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 84%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Redis &amp; Caching Strategies</span>
+                  <span class="skill-level-text">LATENCY REDUCTION</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">SQL &amp; MySQL Workbench</span>
+                  <span class="skill-level-text">DATA INTEGRATION</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: DevOps, Security & Tooling -->
+          <div class="arsenal-category">
+            <div class="category-title">
+              <span>DEVOPS, SECURITY &amp; TOOLS</span>
+              <span class="cat-badge">SEC-OPS</span>
+            </div>
+            <div class="skill-list">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">GitLab CI/CD (gitlab-ci.yaml)</span>
+                  <span class="skill-level-text">PIPELINE AUTOMATION</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Black Duck CVE &amp; Fortify (FoD)</span>
+                  <span class="skill-level-text">SECURITY COMPLIANCE</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Docker &amp; Containerization</span>
+                  <span class="skill-level-text">LOCAL &amp; DEPLOYMENT</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 82%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">AWS, Azure RBAC, OAuth 2.0</span>
+                  <span class="skill-level-text">CLOUD IDENTITY</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 84%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Git, JIRA, Postman, VS Code</span>
+                  <span class="skill-level-text">WORKFLOW EXCELLENCE</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 96%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills & Leadership Matrix -->
+        <h3 class="section-headline" style="margin-top: 2.5rem;">// LEADERSHIP &amp; ENGINEERING CULTURE</h3>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-label" style="color: var(--matrix-core); font-size: 1.1rem; margin-bottom: 0.4rem;">
+              👥 Team Leadership &amp; Mentorship
+            </div>
+            <div class="metric-sub">
+              Drove a 40% increase in team task velocity at HCLTech through technical pairing, architectural guidance, and standardizing PR guidelines.
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-label" style="color: var(--matrix-core); font-size: 1.1rem; margin-bottom: 0.4rem;">
+              🛡️ Zero-Defect Quality Mindset
+            </div>
+            <div class="metric-sub">
+              Delivered a 15% reduction in production regressions by formalizing component test strategies, code review checklists, and automated linter gates.
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-label" style="color: var(--matrix-core); font-size: 1.1rem; margin-bottom: 0.4rem;">
+              🌐 Cross-Functional Bridge
+            </div>
+            <div class="metric-sub">
+              Seamlessly collaborating across product management, backend microservice teams, DevOps pipelines, and enterprise security auditors.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           PAGE 05: DOSSIER & EDUCATION
+           ========================================== -->
+      <section class="page-view" id="view-dossier">
+        <div class="view-header">
+          <div class="view-breadcrumbs">
+            <span>TERMINAL</span> / <span>ROOT</span> / <span class="curr">05_OPERATOR_DOSSIER.SYS</span>
+          </div>
+          <h1 class="view-title scramble-hover" data-scramble="BACKGROUND, PHILOSOPHY &amp; EDUCATION">
+            BACKGROUND, PHILOSOPHY &amp; EDUCATION
+          </h1>
+          <p class="view-desc">
+            Formal engineering foundation, professional objective, and the core architectural principles that govern Anand Kumar's software development approach.
+          </p>
+        </div>
+
+        <div class="dossier-grid">
+          <!-- Left: Engineering Philosophy & Objective -->
+          <div class="dossier-card">
+            <h3 class="section-headline">// PROFESSIONAL OBJECTIVE</h3>
+            <div class="dossier-prose">
+              <p>
+                Innovative Frontend Developer with <strong>7+ years of experience</strong> in designing, developing, and optimizing user-centric applications. Proven expertise in handling high-complexity projects, including large-scale Pub/Sub architectures and content management systems. Adept at using modern frontend technologies like <strong>TypeScript</strong>, <strong>Alpine.js</strong>, and <strong>React.js</strong> to deliver scalable and maintainable solutions. Seeking to leverage my technical acumen and leadership skills to contribute to a cutting-edge technology team.
+              </p>
+
+              <div class="quote-block">
+                "The Matrix isn't just about rendering pixels fast—it's about building resilient, decoupled, and secure data pipelines where every microservice speaks a reliable dialect."
+              </div>
+
+              <h4 style="color: var(--matrix-bright); font-size: 1rem; margin-top: 0.8rem;">
+                // THREE CORE ENGINEERING PILLARS:
+              </h4>
+
+              <p>
+                <strong>1. Decoupled by Design:</strong> Managing 20+ micro-repositories taught me that tight coupling is fatal at enterprise scale. Utilizing asynchronous event buses (Pub/Sub, Kafka) ensures that teams build independently without breaking upstream flows.
+              </p>
+
+              <p>
+                <strong>2. Proactive Security Hardening:</strong> Security cannot be an afterthought left for audit days. Integrating automated Black Duck CVE scans and Fortify on Demand directly inside CI/CD gates prevents zero-day vulnerabilities from reaching runtime.
+              </p>
+
+              <p>
+                <strong>3. Human &amp; Machine Performance:</strong> Boosting user-perceived performance (sub-second render times, smooth 60fps micro-interactions) while accelerating team turnaround speed by 40% through reusable component architecture and mentorship.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Education & Certifications -->
+          <div>
+            <div class="dossier-card" style="margin-bottom: 1.6rem;">
+              <h3 class="section-headline">// ACADEMIC DEGREE</h3>
+              <div style="font-size: 1.15rem; font-weight: 700; color: var(--matrix-bright); margin-bottom: 0.3rem;">
+                Bachelor of Engineering (B.E.)
+              </div>
+              <div style="font-size: 0.88rem; color: var(--matrix-core); margin-bottom: 0.6rem;">
+                Electronics &amp; Telecommunication (E&amp;TC)
+              </div>
+              <div style="font-size: 0.82rem; color: var(--matrix-text-muted); margin-bottom: 1rem;">
+                DR. D.Y. Patil Institute of Engineering, Management &amp; Research
+              </div>
+
+              <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                <span class="status-badge" style="background: var(--matrix-code-bg);">
+                  GRADE: 8.4 CGPA
+                </span>
+                <span class="status-badge" style="background: var(--matrix-code-bg);">
+                  YEAR OF GRADUATION: 2016
+                </span>
+              </div>
+            </div>
+
+            <div class="dossier-card">
+              <h3 class="section-headline">// QUICK FACTS</h3>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.82rem;">
+                <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--matrix-border); padding-bottom: 0.4rem;">
+                  <span style="color: var(--matrix-text-muted);">Current Base:</span>
+                  <span style="color: var(--matrix-bright);">Bengaluru, Karnataka, India</span>
+                </li>
+                <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--matrix-border); padding-bottom: 0.4rem;">
+                  <span style="color: var(--matrix-text-muted);">Total Frontend Tenure:</span>
+                  <span style="color: var(--matrix-core);">7+ Years (Since 2016)</span>
+                </li>
+                <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--matrix-border); padding-bottom: 0.4rem;">
+                  <span style="color: var(--matrix-text-muted);">Work Authorization:</span>
+                  <span style="color: var(--matrix-bright);">India Citizen</span>
+                </li>
+                <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--matrix-border); padding-bottom: 0.4rem;">
+                  <span style="color: var(--matrix-text-muted);">Preferred Roles:</span>
+                  <span style="color: var(--matrix-core);">Sr. Frontend Dev / Tech Lead</span>
+                </li>
+                <li style="display: flex; justify-content: space-between; padding-top: 0.2rem;">
+                  <span style="color: var(--matrix-text-muted);">Work Modes:</span>
+                  <span style="color: var(--matrix-bright);">Hybrid / Remote / On-Site</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           PAGE 06: TRANSMIT & CONNECT
+           ========================================== -->
+      <section class="page-view" id="view-contact">
+        <div class="view-header">
+          <div class="view-breadcrumbs">
+            <span>TERMINAL</span> / <span>ROOT</span> / <span class="curr">06_TRANSMIT_HANDSHAKE.SYS</span>
+          </div>
+          <h1 class="view-title scramble-hover" data-scramble="TRANSMIT PACKET // CONNECT">
+            TRANSMIT PACKET // CONNECT
+          </h1>
+          <p class="view-desc">
+            Initiate communication with Anand Kumar. Copy coordinates with one click or dispatch a secure encrypted message.
+          </p>
+        </div>
+
+        <div class="transmit-wrapper">
+          <!-- Left: Direct Channels & Instant Actions -->
+          <div class="transmit-box">
+            <h3 class="section-headline">// DIRECT OPERATOR CHANNELS</h3>
+            <p style="font-size: 0.85rem; color: var(--matrix-text-muted); margin-bottom: 1.2rem;">
+              Click any channel below to copy the packet directly to your clipboard or launch your email client.
+            </p>
+
+            <div class="contact-quick-list">
+              <!-- Email -->
+              <div class="contact-quick-item">
+                <div class="quick-detail">
+                  <span class="quick-label">Electronic Mail</span>
+                  <span class="quick-val">anandkumar2991@gmail.com</span>
+                </div>
+                <div style="display: flex; gap: 0.4rem;">
+                  <button class="cyber-btn" data-copy-val="anandkumar2991@gmail.com" data-copy-label="EMAIL">
+                    COPY
+                  </button>
+                  <a href="mailto:anandkumar2991@gmail.com" class="cyber-btn primary">
+                    MAILTO
+                  </a>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="contact-quick-item">
+                <div class="quick-detail">
+                  <span class="quick-label">Telephone / WhatsApp</span>
+                  <span class="quick-val">+91 9158734603</span>
+                </div>
+                <div style="display: flex; gap: 0.4rem;">
+                  <button class="cyber-btn" data-copy-val="+919158734603" data-copy-label="PHONE">
+                    COPY
+                  </button>
+                  <a href="tel:+919158734603" class="cyber-btn primary">
+                    DIAL
+                  </a>
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <div class="contact-quick-item">
+                <div class="quick-detail">
+                  <span class="quick-label">Professional Network</span>
+                  <span class="quick-val">LinkedIn Profile</span>
+                </div>
+                <div>
+                  <a href="https://www.linkedin.com/in/anandkumar2991" target="_blank" rel="noopener noreferrer" class="cyber-btn primary">
+                    VISIT LINKEDIN
+                  </a>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="contact-quick-item">
+                <div class="quick-detail">
+                  <span class="quick-label">Physical Coordinates</span>
+                  <span class="quick-val">Bengaluru, India [12.9716° N, 77.5946° E]</span>
+                </div>
+                <span class="status-badge">TIMEZONE: IST (UTC+5:30)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Encrypted Transmit Form -->
+          <div class="transmit-box">
+            <h3 class="section-headline">// ENCRYPTED TRANSMIT DISPATCH</h3>
+            <form class="cyber-form" id="transmit-form">
+              <div class="form-group">
+                <label class="form-label" for="sender-name">Operator / Sender Name</label>
+                <input type="text" id="sender-name" class="form-input" placeholder="e.g. Morpheus / Tech Recruiter" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="sender-email">Sender Comm Node (Email)</label>
+                <input type="email" id="sender-email" class="form-input" placeholder="e.g. contact@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message-subject">Subject / Project Intent</label>
+                <input type="text" id="message-subject" class="form-input" placeholder="e.g. Senior Frontend Lead Role / Architectural Consultation" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message-body">Payload Content</label>
+                <textarea id="message-body" class="form-textarea" placeholder="Detail your team requirements, technology stack, and interview coordinates..." required></textarea>
+              </div>
+
+              <button type="submit" class="cyber-btn primary" style="padding: 0.75rem 1rem; justify-content: center; font-size: 0.85rem;">
+                <span>📡</span> DISPATCH ENCRYPTED PACKET
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Ergonomic Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <a class="mobile-nav-item active" data-view-target="overview">
+      <span>01</span>
+      <span>SYS</span>
+    </a>
+    <a class="mobile-nav-item" data-view-target="experience">
+      <span>02</span>
+      <span>EXP</span>
+    </a>
+    <a class="mobile-nav-item" data-view-target="projects">
+      <span>03</span>
+      <span>PROJ</span>
+    </a>
+    <a class="mobile-nav-item" data-view-target="arsenal">
+      <span>04</span>
+      <span>STACK</span>
+    </a>
+    <a class="mobile-nav-item" data-view-target="dossier">
+      <span>05</span>
+      <span>EDU</span>
+    </a>
+    <a class="mobile-nav-item" data-view-target="contact">
+      <span>06</span>
+      <span>CONNECT</span>
+    </a>
+  </nav>
+
+  <!-- Interactive Terminal HUD Drawer -->
+  <div class="terminal-drawer" id="terminal-drawer">
+    <div class="terminal-header">
+      <div class="terminal-title">
+        <span>&gt;_</span>
+        <span>MATRIX COMMAND LINE INTERFACE [anand@matrix-node]</span>
+      </div>
+      <div class="terminal-actions">
+        <span style="font-size: 0.68rem; color: var(--matrix-text-muted);">Hotkeys: T or ` to toggle • Esc to close</span>
+        <button class="cyber-btn" id="terminal-close-btn" style="padding: 0.1rem 0.5rem; font-size: 0.7rem;">✕</button>
+      </div>
+    </div>
+
+    <!-- Quick clickable chips -->
+    <div class="terminal-chips">
+      <button class="term-chip" data-cmd="help">help</button>
+      <button class="term-chip" data-cmd="overview">overview</button>
+      <button class="term-chip" data-cmd="exp">exp</button>
+      <button class="term-chip" data-cmd="projects">projects</button>
+      <button class="term-chip" data-cmd="skills">skills</button>
+      <button class="term-chip" data-cmd="contact">contact</button>
+      <button class="term-chip" data-cmd="matrix">matrix ripple</button>
+      <button class="term-chip" data-cmd="theme cyan">theme cyan</button>
+      <button class="term-chip" data-cmd="sudo hire">sudo hire</button>
+      <button class="term-chip" data-cmd="clear">clear</button>
+    </div>
+
+    <div class="terminal-body" id="terminal-output">
+      <div class="terminal-output-line system">// INITIALIZING MATRIX CLI SHELL v3.4</div>
+      <div class="terminal-output-line system">// OPERATOR: ANAND KUMAR [SR. FRONTEND DEV &amp; TECH LEAD]</div>
+      <div class="terminal-output-line system">// Type 'help' or click any chips above to execute subroutines.</div>
+    </div>
+
+    <div class="terminal-input-row">
+      <span class="terminal-prompt">anand@matrix:~$</span>
+      <input type="text" class="terminal-input" id="terminal-input" placeholder="Type command... (e.g. help, projects, skills, contact)" autocomplete="off" spellcheck="false">
+    </div>
+  </div>
+
+  <!-- Project Deep-Dive Specification Modal -->
+  <div class="modal-backdrop" id="project-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modal-close-btn" title="Close Specification">✕</button>
+      <div id="modal-content-target"></div>
+    </div>
+  </div>
+
+  <!-- Cyber Toast Notification -->
+  <div class="cyber-toast" id="cyber-toast">
+    <span>✓</span> PACKET_COPIED
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/portfolio-matrix.js"></script>
+  <script src="js/portfolio.js"></script>
+</body>
+</html>
