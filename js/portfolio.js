@@ -200,7 +200,7 @@ class MatrixPortfolioApp {
   constructor() {
     this.audio = new CyberAudio();
     this.currentView = 'overview';
-    this.currentReality = 'red'; // 'red' (Matrix Cyber) or 'blue' (Executive Minimalist)
+    this.currentReality = 'blue'; // 'blue' (The comfortable illusion - default) or 'red' (The desert of the real)
     this.terminalOpen = false;
     this.commandHistory = [];
     this.historyIndex = -1;
@@ -379,26 +379,69 @@ class MatrixPortfolioApp {
       });
     });
 
-    // Simulated Message Transmit Form
+    // Live Encrypted Message Transmit Form (Delivers directly to anandkumar2991@gmail.com)
     const transmitForm = document.getElementById('transmit-form');
     if (transmitForm) {
       transmitForm.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        const nameInput = document.getElementById('sender-name');
+        const emailInput = document.getElementById('sender-email');
+        const subjectInput = document.getElementById('message-subject');
+        const messageInput = document.getElementById('message-body');
         const submitBtn = transmitForm.querySelector('button[type="submit"]');
-        const origText = submitBtn.innerText;
-        submitBtn.innerText = 'ENCRYPTING & TRANSMITTING...';
+
+        const senderName = nameInput ? nameInput.value.trim() : 'Recruiter / Visitor';
+        const senderEmail = emailInput ? emailInput.value.trim() : '';
+        const messageSubject = subjectInput ? subjectInput.value.trim() : 'Portfolio Inquiry';
+        const messageBody = messageInput ? messageInput.value.trim() : '';
+
+        const origHtml = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span>⏳</span> TRANSMITTING DIRECT TO ANAND INBOX...';
         submitBtn.disabled = true;
 
-        setTimeout(() => {
+        const payload = {
+          name: senderName,
+          email: senderEmail,
+          _subject: `[Matrix Portfolio Transmission] ${messageSubject} - from ${senderName}`,
+          message: messageBody,
+          _replyto: senderEmail,
+          _template: 'table',
+          timestamp: new Date().toLocaleString()
+        };
+
+        // Dispatch via FormSubmit AJAX endpoint straight to Anand Kumar's inbox
+        fetch('https://formsubmit.co/ajax/anandkumar2991@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        })
+        .then(response => response.json())
+        .then(data => {
           this.audio.playSuccess();
-          this.showToast('PACKET_DELIVERED: Message sent to Anand Kumar');
-          submitBtn.innerText = 'TRANSMISSION CONFIRMED ✓';
+          this.showToast('PACKET DELIVERED ◈ Transmission received by anandkumar2991@gmail.com');
+          submitBtn.innerHTML = '<span>✓</span> TRANSMISSION DELIVERED TO INBOX';
           transmitForm.reset();
           setTimeout(() => {
-            submitBtn.innerText = origText;
+            submitBtn.innerHTML = origHtml;
             submitBtn.disabled = false;
-          }, 3000);
-        }, 1200);
+          }, 3500);
+        })
+        .catch(err => {
+          // Fallback to mailto if browser extension / ad-blocker blocks cross-origin POST
+          this.audio.playGlitch();
+          this.showToast('DIRECT HANDSHAKE: Launching mail client...');
+          const mailtoUri = `mailto:anandkumar2991@gmail.com?subject=${encodeURIComponent(messageSubject)}&body=${encodeURIComponent("Sender: " + senderName + "\nEmail: " + senderEmail + "\n\n" + messageBody)}`;
+          window.location.href = mailtoUri;
+          submitBtn.innerHTML = '<span>✉</span> OPENED IN EMAIL CLIENT';
+          setTimeout(() => {
+            submitBtn.innerHTML = origHtml;
+            submitBtn.disabled = false;
+          }, 3500);
+        });
       });
     }
 
@@ -480,12 +523,18 @@ class MatrixPortfolioApp {
     });
   }
 
-  // Switch Reality (Red Pill = Matrix Cyber, Blue Pill = Minimalist Executive)
+  // Switch Reality (Blue Pill = The Beautiful Matrix Illusion, Red Pill = The Desert of the Real)
   switchReality(reality) {
     if (reality === this.currentReality) return;
     this.currentReality = reality;
 
-    this.audio.playGlitch();
+    if (reality === 'red') {
+      this.audio.playGlitch();
+      this.startRedPillGlitches();
+    } else {
+      this.audio.playSuccess();
+      this.stopRedPillGlitches();
+    }
 
     // Trigger visual glitch flash
     if (this.glitchOverlay) {
@@ -494,18 +543,77 @@ class MatrixPortfolioApp {
     }
 
     // Toggle body data attribute
-    if (reality === 'blue') {
-      document.documentElement.setAttribute('data-reality', 'blue');
-      this.showToast('REALITY SHIFT ◈ EXECUTIVE SILICON VALLEY MINIMAL');
+    if (reality === 'red') {
+      document.documentElement.setAttribute('data-reality', 'red');
+      this.showToast('WARNING: YOU TOOK THE RED PILL ◈ WELCOME TO THE DESERT OF THE REAL');
     } else {
       document.documentElement.removeAttribute('data-reality');
-      this.showToast('REALITY SHIFT ◈ AUTHENTIC MATRIX CYBER ENGINE');
+      this.showToast('BLUE PILL ACTIVE ◈ THE MATRIX ILLUSION IS RESTORED');
     }
 
     // Update active state in pill buttons
     document.querySelectorAll('.pill-btn').forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-reality-target') === reality);
     });
+  }
+
+  // Recurring Electrical Glitch in Red Pill Mode (Random Intervals)
+  startRedPillGlitches() {
+    this.stopRedPillGlitches();
+    this.scheduleNextGlitch();
+  }
+
+  stopRedPillGlitches() {
+    if (this.glitchTimer) {
+      clearTimeout(this.glitchTimer);
+      this.glitchTimer = null;
+    }
+    if (this.glitchOverlay) {
+      this.glitchOverlay.classList.remove('flash');
+    }
+    document.body.classList.remove('reality-screen-jitter');
+  }
+
+  scheduleNextGlitch() {
+    if (this.currentReality !== 'red') return;
+
+    // Random interval between 3.5s and 8.0s for authentic erratic glitching
+    const randomDelay = Math.floor(3500 + Math.random() * 4500);
+    this.glitchTimer = setTimeout(() => {
+      this.triggerRandomGlitch();
+      this.scheduleNextGlitch();
+    }, randomDelay);
+  }
+
+  triggerRandomGlitch() {
+    if (this.currentReality !== 'red') return;
+
+    // Subtle audio electrical spark / static buzz
+    this.audio.playGlitch();
+
+    // Visual flicker on overlay & jitter on screen
+    if (this.glitchOverlay) {
+      this.glitchOverlay.classList.add('flash');
+    }
+    document.body.classList.add('reality-screen-jitter');
+
+    // Rapid double micro-burst or single burst
+    const burstDuration = Math.random() > 0.4 ? 140 : 260;
+
+    setTimeout(() => {
+      if (this.glitchOverlay) this.glitchOverlay.classList.remove('flash');
+      document.body.classList.remove('reality-screen-jitter');
+
+      // 35% chance of an immediate quick aftershock flicker
+      if (Math.random() < 0.35 && this.currentReality === 'red') {
+        setTimeout(() => {
+          if (this.glitchOverlay) this.glitchOverlay.classList.add('flash');
+          setTimeout(() => {
+            if (this.glitchOverlay) this.glitchOverlay.classList.remove('flash');
+          }, 80);
+        }, 120);
+      }
+    }, burstDuration);
   }
 
   // Pulse data packet across Pub/Sub Bus Simulator

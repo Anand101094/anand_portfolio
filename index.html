@@ -37,13 +37,13 @@
     </div>
 
     <div class="topbar-right">
-      <!-- Feature A: Red Pill / Blue Pill Reality Switcher -->
-      <div class="pill-mode-group" title="Toggle Reality Engine">
-        <button class="pill-btn red-pill active" data-reality-target="red" title="Deep Matrix Cyber Experience">
-          <span>💊</span> RED PILL
-        </button>
-        <button class="pill-btn blue-pill" data-reality-target="blue" title="Executive Minimalist Silicon Valley Mode">
+      <!-- Feature A: Red Pill / Blue Pill Reality Engine -->
+      <div class="pill-mode-group" title="Reality Protocol: Blue Pill = The Illusion (Polished) vs Red Pill = Desert of the Real (Raw)">
+        <button class="pill-btn blue-pill active" data-reality-target="blue" title="Take the Blue Pill: Stay in the comfortable, polished illusion">
           <span>💊</span> BLUE PILL
+        </button>
+        <button class="pill-btn red-pill" data-reality-target="red" title="Take the Red Pill: Wake up to the Desert of the Real (harsh raw reality)">
+          <span>💊</span> RED PILL
         </button>
       </div>
 
@@ -77,6 +77,17 @@
       </button>
     </div>
   </header>
+
+  <!-- Red Pill Warning Banner: Desert of the Real -->
+  <div class="reality-warning-banner" id="reality-banner">
+    <div style="display: flex; align-items: center; gap: 0.6rem;">
+      <span style="font-size: 1.1rem;">⚠️</span>
+      <span><strong>SIMULATION TERMINATED</strong> ◈ YOU TOOK THE RED PILL ◈ WELCOME TO THE DESERT OF THE REAL (UNCENSORED RAW DEVELOPER REALITY)</span>
+    </div>
+    <button class="cyber-btn" onclick="window.portfolioApp.switchReality('blue')" style="background: rgba(0, 195, 255, 0.25); border-color: #00c3ff; color: #7fe4ff;">
+      <span>💊</span> TAKE BLUE PILL (RESTORE POLISHED ILLUSION)
+    </button>
+  </div>
 
   <!-- Application Shell -->
   <div class="matrix-layout">
@@ -210,6 +221,10 @@
             <button class="cyber-btn" data-copy-val="anandkumar2991@gmail.com" data-copy-label="EMAIL">
               <span>📋</span> COPY EMAIL
             </button>
+            <button class="cyber-btn" onclick="window.portfolioApp.switchReality(window.portfolioApp.currentReality === 'red' ? 'blue' : 'red')">
+              <span class="reality-illusion-text">💊 TAKE RED PILL</span>
+              <span class="reality-truth-text">💊 RESTORE BLUE PILL</span>
+            </button>
             <button class="cyber-btn" data-view-target="contact">
               <span>📡</span> TRANSMIT HANDSHAKE
             </button>
@@ -274,38 +289,74 @@
         <div class="metrics-grid">
           <div class="metric-card">
             <div class="metric-val">07+</div>
-            <div class="metric-label">YEARS EXPERIENCE</div>
-            <div class="metric-sub">Enterprise Frontend &amp; Tech Leadership</div>
+            <div class="metric-label">
+              <span class="reality-illusion-text">YEARS EXPERIENCE</span>
+              <span class="reality-truth-text">YEARS BATTLING PROD INCIDENTS</span>
+            </div>
+            <div class="metric-sub">
+              <span class="reality-illusion-text">Enterprise Frontend &amp; Tech Leadership</span>
+              <span class="reality-truth-text">Codebase has survived 3 corporate reorgs and zero unhandled rejections.</span>
+            </div>
           </div>
 
           <div class="metric-card">
             <div class="metric-val">20+</div>
-            <div class="metric-label">MICRO-REPOS</div>
-            <div class="metric-sub">Architected under Pub/Sub for T-Mobile</div>
+            <div class="metric-label">
+              <span class="reality-illusion-text">MICRO-REPOS</span>
+              <span class="reality-truth-text">MICRO-REPOS IN HARMONY</span>
+            </div>
+            <div class="metric-sub">
+              <span class="reality-illusion-text">Architected under Pub/Sub for T-Mobile</span>
+              <span class="reality-truth-text">Held together via asynchronous Pub/Sub so 40+ devs didn't step on each other.</span>
+            </div>
           </div>
 
           <div class="metric-card">
             <div class="metric-val">25%</div>
-            <div class="metric-label">PERFORMANCE GAIN</div>
-            <div class="metric-sub">Site acceleration via AEM orchestration</div>
+            <div class="metric-label">
+              <span class="reality-illusion-text">PERFORMANCE GAIN</span>
+              <span class="reality-truth-text">FASTER THAN AEM ANTICIPATED</span>
+            </div>
+            <div class="metric-sub">
+              <span class="reality-illusion-text">Site acceleration via AEM orchestration</span>
+              <span class="reality-truth-text">Lightweight Alpine directives because marketing uploaded 20MB hero graphics.</span>
+            </div>
           </div>
 
           <div class="metric-card">
             <div class="metric-val">15%</div>
-            <div class="metric-label">DEFECT REDUCTION</div>
-            <div class="metric-sub">Through compliance &amp; QA specifications</div>
+            <div class="metric-label">
+              <span class="reality-illusion-text">DEFECT REDUCTION</span>
+              <span class="reality-truth-text">SAVED FRIDAY 6PM DEPLOYS</span>
+            </div>
+            <div class="metric-sub">
+              <span class="reality-illusion-text">Through compliance &amp; QA specifications</span>
+              <span class="reality-truth-text">Zero frantic midnight Slack pings for weekend on-call engineers.</span>
+            </div>
           </div>
 
           <div class="metric-card">
             <div class="metric-val">20K+</div>
-            <div class="metric-label">CONCURRENT USERS</div>
-            <div class="metric-sub">Load tested for Amazon employee portal</div>
+            <div class="metric-label">
+              <span class="reality-illusion-text">CONCURRENT USERS</span>
+              <span class="reality-truth-text">SURVIVED ALL-HANDS LOAD TEST</span>
+            </div>
+            <div class="metric-sub">
+              <span class="reality-illusion-text">Load tested for Amazon employee portal</span>
+              <span class="reality-truth-text">20,000 employees pinged the portal at once and the servers stayed chill.</span>
+            </div>
           </div>
 
           <div class="metric-card">
             <div class="metric-val">40%</div>
-            <div class="metric-label">TASK VELOCITY GAIN</div>
-            <div class="metric-sub">Achieved via engineering mentorship</div>
+            <div class="metric-label">
+              <span class="reality-illusion-text">TASK VELOCITY GAIN</span>
+              <span class="reality-truth-text">REAL TEAM VELOCITY</span>
+            </div>
+            <div class="metric-sub">
+              <span class="reality-illusion-text">Achieved via engineering mentorship</span>
+              <span class="reality-truth-text">Taught teammates to stop debugging with 40 console.logs and trust unit tests.</span>
+            </div>
           </div>
         </div>
 
@@ -1227,27 +1278,30 @@
             <form class="cyber-form" id="transmit-form">
               <div class="form-group">
                 <label class="form-label" for="sender-name">Operator / Sender Name</label>
-                <input type="text" id="sender-name" class="form-input" placeholder="e.g. Morpheus / Tech Recruiter" required>
+                <input type="text" id="sender-name" name="name" class="form-input" placeholder="e.g. Morpheus / Tech Recruiter" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="sender-email">Sender Comm Node (Email)</label>
-                <input type="email" id="sender-email" class="form-input" placeholder="e.g. contact@company.com" required>
+                <input type="email" id="sender-email" name="email" class="form-input" placeholder="e.g. contact@company.com" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="message-subject">Subject / Project Intent</label>
-                <input type="text" id="message-subject" class="form-input" placeholder="e.g. Senior Frontend Lead Role / Architectural Consultation" required>
+                <input type="text" id="message-subject" name="_subject" class="form-input" placeholder="e.g. Senior Frontend Lead Role / Architectural Consultation" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="message-body">Payload Content</label>
-                <textarea id="message-body" class="form-textarea" placeholder="Detail your team requirements, technology stack, and interview coordinates..." required></textarea>
+                <textarea id="message-body" name="message" class="form-textarea" placeholder="Detail your team requirements, technology stack, and interview coordinates..." required></textarea>
               </div>
 
               <button type="submit" class="cyber-btn primary" style="padding: 0.75rem 1rem; justify-content: center; font-size: 0.85rem;">
                 <span>📡</span> DISPATCH ENCRYPTED PACKET
               </button>
+              <div style="font-size: 0.72rem; color: var(--matrix-text-muted); margin-top: 0.5rem; text-align: center;">
+                Delivers directly to <strong>anandkumar2991@gmail.com</strong> with automated fallback handshake.
+              </div>
             </form>
           </div>
         </div>

@@ -1588,7 +1588,9 @@ body.rain-off #ambient-matrix-canvas {
 }
 
 /* ==========================================================================
-   FEATURE A: RED PILL / BLUE PILL REALITY ENGINE
+   FEATURE A: RED PILL VS BLUE PILL REALITY ENGINE
+   Blue Pill = The Matrix Illusion (Immaculate, glossy, perfectly aligned, stylish)
+   Red Pill  = The Desert of the Real (Harsh, raw, misaligned, jittery, uncensored)
    ========================================================================== */
 .pill-mode-group {
   display: inline-flex;
@@ -1620,13 +1622,6 @@ body.rain-off #ambient-matrix-canvas {
   color: #ffffff;
 }
 
-.pill-btn.red-pill.active {
-  background: linear-gradient(135deg, rgba(255, 30, 60, 0.25), rgba(255, 0, 50, 0.45));
-  color: #ff5566;
-  border: 1px solid #ff3344;
-  box-shadow: 0 0 12px rgba(255, 51, 68, 0.45);
-}
-
 .pill-btn.blue-pill.active {
   background: linear-gradient(135deg, rgba(0, 150, 255, 0.25), rgba(0, 210, 255, 0.45));
   color: #55d4ff;
@@ -1634,43 +1629,186 @@ body.rain-off #ambient-matrix-canvas {
   box-shadow: 0 0 12px rgba(0, 195, 255, 0.45);
 }
 
-/* Blue Pill (Executive Silicon Valley Mode) */
-[data-reality="blue"] {
-  --matrix-core: #00e5a3;
-  --matrix-bright: #52ffca;
-  --matrix-dim: #00996b;
-  --matrix-dark: #07261b;
-  --matrix-black: #0b1015;
-  --matrix-surface: rgba(16, 24, 34, 0.88);
-  --matrix-surface-hover: rgba(22, 34, 48, 0.96);
-  --matrix-border: rgba(82, 255, 202, 0.18);
-  --matrix-border-bright: rgba(82, 255, 202, 0.6);
-  --matrix-glow: 0 0 16px rgba(0, 229, 163, 0.3);
-  --matrix-glow-subtle: 0 0 8px rgba(0, 229, 163, 0.15);
-  --matrix-text: #e2eaf4;
-  --matrix-text-muted: #859bb0;
-  --matrix-accent: #38bdf8;
-  --matrix-code-bg: rgba(0, 229, 163, 0.08);
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+.pill-btn.red-pill.active {
+  background: linear-gradient(135deg, rgba(255, 30, 60, 0.3), rgba(255, 0, 50, 0.5));
+  color: #ff5566;
+  border: 1px solid #ff3344;
+  box-shadow: 0 0 14px rgba(255, 51, 68, 0.6);
+  animation: pillAlarmPulse 1.5s infinite;
 }
 
-[data-reality="blue"] .crt-overlay {
-  opacity: 0.15;
+@keyframes pillAlarmPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 51, 68, 0.5); }
+  50% { box-shadow: 0 0 18px rgba(255, 51, 68, 0.9); }
 }
 
-[data-reality="blue"] #ambient-matrix-canvas {
-  opacity: 0.14;
+/* ==========================================================================
+   RED PILL MODE: THE DESERT OF THE REAL
+   Improper alignment, jittery transforms, raw typewriter typography,
+   chromatic glitch, and uncensored developer realities!
+   ========================================================================== */
+[data-reality="red"] {
+  --matrix-core: #ff3b30;
+  --matrix-bright: #ff6961;
+  --matrix-dim: #991b14;
+  --matrix-dark: #380806;
+  --matrix-black: #0c0606;
+  --matrix-surface: rgba(26, 10, 10, 0.92);
+  --matrix-surface-hover: rgba(36, 14, 14, 0.98);
+  --matrix-border: rgba(255, 59, 48, 0.4);
+  --matrix-border-bright: rgba(255, 80, 70, 0.85);
+  --matrix-glow: 0 0 14px rgba(255, 59, 48, 0.45);
+  --matrix-glow-subtle: 0 0 6px rgba(255, 59, 48, 0.25);
+  --matrix-text: #fcdbd8;
+  --matrix-text-muted: #ab736f;
+  --matrix-accent: #ff9500;
+  --matrix-code-bg: rgba(255, 59, 48, 0.12);
+
+  font-family: 'Courier New', Courier, monospace !important;
 }
 
-[data-reality="blue"] .hero-dossier,
-[data-reality="blue"] .metric-card,
-[data-reality="blue"] .timeline-card,
-[data-reality="blue"] .project-card,
-[data-reality="blue"] .arsenal-category,
-[data-reality="blue"] .dossier-card,
-[data-reality="blue"] .transmit-box {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  border-radius: 8px;
+/* Harsh chromatic glitch on titles */
+[data-reality="red"] .hero-name,
+[data-reality="red"] .view-title {
+  text-shadow: -2.5px 0 #ff0033, 2.5px 0 #00ffff !important;
+  letter-spacing: 0.12em !important;
+  animation: textDistort 4s infinite alternate;
+}
+
+@keyframes textDistort {
+  0%, 92% { transform: skewX(0deg); }
+  93% { transform: skewX(-2deg) translate(-2px, 1px); }
+  95% { transform: skewX(2.5deg) translate(2px, -1px); }
+  97% { transform: skewX(-1deg); }
+  100% { transform: skewX(0deg); }
+}
+
+/* Misaligned and jittery cards: Improper alignments */
+[data-reality="red"] .hero-dossier {
+  transform: rotate(-0.45deg) translate(-2px, 2px);
+  border-style: dashed;
+  border-width: 2px;
+}
+
+[data-reality="red"] .metric-card:nth-child(1) {
+  transform: rotate(0.85deg) translate(3px, -2px);
+  border-style: dashed;
+}
+[data-reality="red"] .metric-card:nth-child(2) {
+  transform: rotate(-0.95deg) translate(-4px, 3px);
+  border-style: dotted;
+}
+[data-reality="red"] .metric-card:nth-child(3) {
+  transform: rotate(0.65deg) translate(2px, 2px);
+  border-style: dashed;
+}
+[data-reality="red"] .metric-card:nth-child(4) {
+  transform: rotate(-0.75deg) translate(-3px, -3px);
+  border-style: dotted;
+}
+[data-reality="red"] .metric-card:nth-child(5) {
+  transform: rotate(1.1deg) translate(4px, 1px);
+  border-style: dashed;
+}
+[data-reality="red"] .metric-card:nth-child(6) {
+  transform: rotate(-0.85deg) translate(-2px, 3px);
+  border-style: dotted;
+}
+
+[data-reality="red"] .project-card:nth-child(odd) {
+  transform: rotate(0.55deg) translate(4px, -2px);
+  border-style: dashed;
+}
+[data-reality="red"] .project-card:nth-child(even) {
+  transform: rotate(-0.65deg) translate(-3px, 2px);
+  border-style: dotted;
+}
+
+[data-reality="red"] .timeline-card {
+  transform: rotate(-0.4deg) translate(4px, 2px);
+  border-style: dashed;
+}
+
+[data-reality="red"] .arsenal-category {
+  transform: rotate(0.5deg) translate(-2px, 2px);
+  border-style: dashed;
+}
+
+[data-reality="red"] .dossier-card {
+  transform: rotate(-0.45deg) translate(3px, -2px);
+  border-style: dashed;
+}
+
+[data-reality="red"] .arch-sim-box {
+  border-style: dashed;
+  transform: rotate(0.3deg);
+}
+
+/* CRT scanlines become heavier and harsher in Desert of Real */
+[data-reality="red"] .crt-overlay {
+  opacity: 0.95;
+  background: linear-gradient(
+    rgba(255, 0, 0, 0) 50%, 
+    rgba(0, 0, 0, 0.45) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.05),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.05)
+  );
+  background-size: 100% 4px, 8px 100%;
+}
+
+/* Warning Banner for Red Pill Mode */
+.reality-warning-banner {
+  display: none;
+  background: rgba(45, 10, 10, 0.98);
+  border-bottom: 2px solid #ff3b30;
+  box-shadow: 0 4px 20px rgba(255, 59, 48, 0.5);
+  color: #ffb3ad;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.76rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  position: sticky;
+  top: var(--header-height);
+  z-index: 99;
+  letter-spacing: 0.05em;
+}
+
+[data-reality="red"] .reality-warning-banner {
+  display: flex !important;
+}
+
+/* Toggle visibility between Illusion text and Raw Truth text */
+.reality-truth-text {
+  display: none;
+}
+
+[data-reality="red"] .reality-truth-text {
+  display: inline;
+  color: #ff9500;
+  font-weight: 700;
+}
+
+[data-reality="red"] .reality-illusion-text {
+  display: none !important;
+}
+
+/* Red Pill Screen Jitter Keyframe */
+@keyframes realityScreenJitter {
+  0% { transform: translate(0, 0); filter: hue-rotate(0deg); }
+  20% { transform: translate(-3px, 2px); filter: contrast(180%) hue-rotate(35deg); }
+  40% { transform: translate(3px, -2px); filter: contrast(80%) brightness(140%); }
+  60% { transform: translate(-2px, -1px); filter: contrast(200%); }
+  80% { transform: translate(2px, 1px); filter: hue-rotate(-20deg); }
+  100% { transform: translate(0, 0); filter: hue-rotate(0deg); }
+}
+
+.reality-screen-jitter {
+  animation: realityScreenJitter 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 /* Reality Glitch Flash */
@@ -1684,12 +1822,19 @@ body.rain-off #ambient-matrix-canvas {
   pointer-events: none;
   background: white;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.1s ease;
 }
 
 .reality-glitch-overlay.flash {
-  opacity: 0.25;
+  opacity: 0.35;
   background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 59, 48, 0.55) 0px,
+    rgba(255, 59, 48, 0.55) 2px,
+    rgba(0, 0, 0, 0.8) 2px,
+    rgba(0, 0, 0, 0.8) 4px
+  );
+}
     0deg,
     rgba(0, 255, 102, 0.4) 0px,
     rgba(0, 255, 102, 0.4) 2px,
@@ -1709,7 +1854,7 @@ body.rain-off #ambient-matrix-canvas {
   margin-bottom: 2.5rem;
   box-shadow: var(--matrix-glow-subtle);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .arch-sim-header {
@@ -1737,10 +1882,11 @@ body.rain-off #ambient-matrix-canvas {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  margin: 2rem 0;
-  padding: 0 1rem;
+  margin: 1.2rem 0;
+  padding: 1.2rem 1rem;
   gap: 0.8rem;
   overflow-x: auto;
+  overflow-y: visible;
 }
 
 .arch-bus-diagram::before {
