@@ -397,51 +397,36 @@ class MatrixPortfolioApp {
         const messageBody = messageInput ? messageInput.value.trim() : '';
 
         const origHtml = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span>⏳</span> TRANSMITTING DIRECT TO ANAND INBOX...';
+        submitBtn.innerHTML = '<span>⏳</span> ENCRYPTING PACKET...';
         submitBtn.disabled = true;
 
-        const payload = {
-          name: senderName,
-          email: senderEmail,
-          _subject: `[Matrix Portfolio Transmission] ${messageSubject} - from ${senderName}`,
-          message: messageBody,
-          _replyto: senderEmail,
-          _template: 'table',
-          timestamp: new Date().toLocaleString()
-        };
+        // Build a fully pre-filled mailto URI — 100% reliable for a local/static portfolio
+        const emailSubject = `[Matrix Portfolio] ${messageSubject} — from ${senderName}`;
+        const emailBody =
+          `From: ${senderName}\n` +
+          `Email: ${senderEmail}\n` +
+          `Subject: ${messageSubject}\n` +
+          `Timestamp: ${new Date().toLocaleString()}\n` +
+          `\n──────────────────────────────\n\n` +
+          messageBody;
 
-        // Dispatch via FormSubmit AJAX endpoint straight to Anand Kumar's inbox
-        fetch('https://formsubmit.co/ajax/anandkumar2991@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        })
-        .then(response => response.json())
-        .then(data => {
+        const mailtoUri =
+          `mailto:anandkumar2991@gmail.com` +
+          `?subject=${encodeURIComponent(emailSubject)}` +
+          `&body=${encodeURIComponent(emailBody)}`;
+
+        // Small delay so the encrypting animation shows, then open email client
+        setTimeout(() => {
           this.audio.playSuccess();
-          this.showToast('PACKET DELIVERED ◈ Transmission received by anandkumar2991@gmail.com');
-          submitBtn.innerHTML = '<span>✓</span> TRANSMISSION DELIVERED TO INBOX';
+          this.showToast('◈ PACKET DISPATCHED ◈ Your email client will open pre-filled — just hit Send');
+          submitBtn.innerHTML = '<span>✉</span> EMAIL CLIENT LAUNCHING...';
+          window.open(mailtoUri, '_self');
           transmitForm.reset();
           setTimeout(() => {
             submitBtn.innerHTML = origHtml;
             submitBtn.disabled = false;
           }, 3500);
-        })
-        .catch(err => {
-          // Fallback to mailto if browser extension / ad-blocker blocks cross-origin POST
-          this.audio.playGlitch();
-          this.showToast('DIRECT HANDSHAKE: Launching mail client...');
-          const mailtoUri = `mailto:anandkumar2991@gmail.com?subject=${encodeURIComponent(messageSubject)}&body=${encodeURIComponent("Sender: " + senderName + "\nEmail: " + senderEmail + "\n\n" + messageBody)}`;
-          window.location.href = mailtoUri;
-          submitBtn.innerHTML = '<span>✉</span> OPENED IN EMAIL CLIENT';
-          setTimeout(() => {
-            submitBtn.innerHTML = origHtml;
-            submitBtn.disabled = false;
-          }, 3500);
-        });
+        }, 800);
       });
     }
 
